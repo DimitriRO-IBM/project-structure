@@ -1,0 +1,5 @@
+<mat-nav-list>
+  <mat-list-item *ngFor="let menu of menus; let i = index" [ngClass]="{ 'selected': menu.selected }" (click)="onMenuItemClick($event)">
+    {{ menu.label }}
+  </mat-list-item>
+</mat-nav-list>

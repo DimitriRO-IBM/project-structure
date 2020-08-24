@@ -9,10 +9,10 @@ const routes: Routes = [{
     component: DefaultLayoutComponent,
     children: [{
       path: '',
-      component: LoginComponent
+      component: LoginComponent,
     }, {
       path: 'main',
-      component: MainComponent,
+      loadChildren: () => import('../../views/main/main.module').then(m => m.MainModule),
     }]
   }];
 
