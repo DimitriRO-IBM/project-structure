@@ -1,0 +1,34 @@
+<div class="login">
+  <form [formGroup]="loginForm">
+    <label>
+      Intranet ID
+      <input type="text" formControlName="username">
+    </label>
+
+    <label>
+      Password
+      <input type="password" formControlName="password">
+    </label>
+
+    <label>
+      Environment
+      <select formControlName="environment">
+        <option *ngFor="let env of environmentOptions" [value]="env.id">
+          {{ env.value }}
+        </option>
+      </select>
+    </label>
+
+    <button (click)="logIn()">
+      Log in
+    </button>
+
+    <button (click)="contactUs()">
+      Contact us
+    </button>
+
+    <button (click)="cancel()">
+      Cancel
+    </button>
+  </form>
+</div>
