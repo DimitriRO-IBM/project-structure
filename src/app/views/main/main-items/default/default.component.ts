@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Customer } from '../../../../shared/models/interfaces/api/customer.model';
+import { CustomersService } from '../../../../shared/services/api/customers.service';
 import { DefaultService } from '../../../../shared/services/api/default.service';
 
 @Component({
@@ -9,9 +11,11 @@ import { DefaultService } from '../../../../shared/services/api/default.service'
 export class DefaultComponent implements OnInit {
 
   apiMessage: string = '';
+  customers: Customer[] = [];
 
   constructor(
     private defaultService: DefaultService,
+    private customersService: CustomersService,
   ) { }
 
   ngOnInit(): void {
@@ -19,6 +23,14 @@ export class DefaultComponent implements OnInit {
       next: (message: { message: string }) => {
         if (message) {
           this.apiMessage = message.message;
+        }
+      }
+    });
+
+    this.customersService.getAll().subscribe({
+      next: (customers: Customer[]) => {
+        if (customers && customers.length) {
+          this.customers = customers;
         }
       }
     });

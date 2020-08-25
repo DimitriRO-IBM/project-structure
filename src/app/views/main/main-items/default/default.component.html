@@ -1,5 +1,11 @@
 <div class="default" *ngIf="apiMessage; else noMessage">
   {{ apiMessage }}
+
+  <ul *ngIf="customers">
+    <li *ngFor="let customer of customers">
+      {{ customer.firstName }} {{ customer.lastName }}
+    </li>
+  </ul>
 </div>
 
 <ng-template #noMessage>
