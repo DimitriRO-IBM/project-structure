@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from '../../views/login/login.component';
-import { MainComponent } from '../../views/main/main.component';
 import { DefaultLayoutComponent } from './default-layout.component';
 
 const routes: Routes = [{
@@ -9,6 +8,10 @@ const routes: Routes = [{
     component: DefaultLayoutComponent,
     children: [{
       path: '',
+      pathMatch: '',
+      redirectTo: 'login',
+    }, {
+      path: 'login',
       component: LoginComponent,
     }, {
       path: 'main',

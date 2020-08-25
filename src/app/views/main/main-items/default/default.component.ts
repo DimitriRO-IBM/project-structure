@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DefaultService } from '../../../../shared/services/api/default.service';
 
 @Component({
   selector: 'app-default',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DefaultComponent implements OnInit {
 
-  constructor() { }
+  apiMessage: string = '';
+
+  constructor(
+    private defaultService: DefaultService,
+  ) { }
 
   ngOnInit(): void {
+    this.defaultService.getApiMessage().subscribe({
+      next: (message: { message: string }) => {
+        if (message) {
+          this.apiMessage = message.message;
+        }
+      }
+    });
   }
 
 }

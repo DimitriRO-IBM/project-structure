@@ -1,1 +1,7 @@
-<p>default works!</p>
+<div class="default" *ngIf="apiMessage; else noMessage">
+  {{ apiMessage }}
+</div>
+
+<ng-template #noMessage>
+  Pas de message chargé par l'API
+</ng-template>

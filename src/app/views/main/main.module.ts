@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { GlobalInventoryComponent } from './main-items/global-inventory/global-inventory.component';
@@ -17,6 +18,7 @@ import { DefaultComponent } from './main-items/default/default.component';
   imports: [
     MainRoutingModule,
     SharedModule,
+    CommonModule,
   ]
 })
 export class MainModule { }

@@ -9,6 +9,10 @@ const routes: Routes = [{
   component: MainComponent,
   children: [{
     path: '',
+    pathMatch: 'full',
+    redirectTo: 'default',
+  }, {
+    path: 'default',
     component: DefaultComponent,
   }, {
     path: 'global-inventory',

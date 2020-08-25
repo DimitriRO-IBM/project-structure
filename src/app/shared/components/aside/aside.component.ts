@@ -18,7 +18,7 @@ export class AsideComponent implements OnInit {
 
   menus: MenuItem[] = [{
     label: 'Default',
-    rootUri: '',
+    rootUri: '/default',
     selected: true,
   }, {
     label: 'Global Inventory',
@@ -67,7 +67,9 @@ export class AsideComponent implements OnInit {
 
   onMenuItemClick(event: MouseEvent): void {
     const clickedLabel: string = (event.target as HTMLElement).innerText;
-    this.tickMenuItem(clickedLabel, true);
+    if (clickedLabel) {
+      this.tickMenuItem(clickedLabel, true);
+    }
   }
 
   tickMenuItem(label: string, goto: boolean = false): void {
@@ -80,6 +82,7 @@ export class AsideComponent implements OnInit {
     if (newSelectedItem) {
       newSelectedItem.selected = true;
       if (goto) {
+        console.log('redirecting to: ', `${this.BASE_URI}${newSelectedItem.rootUri}`)
         this.router.navigate([`${this.BASE_URI}${newSelectedItem.rootUri}`]);
       }
     }
