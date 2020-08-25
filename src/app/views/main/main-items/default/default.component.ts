@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { Customer } from '../../../../shared/models/interfaces/api/customer.model';
 import { CustomersService } from '../../../../shared/services/api/customers.service';
 
 @Component({
@@ -11,6 +12,7 @@ export class DefaultComponent implements OnInit {
 
   selectedCustomerId: Observable<string> = of('');
   selectedId: string = '';
+  selectedCustomer: Customer | undefined;
 
   constructor(
     private customersService: CustomersService,
@@ -23,6 +25,16 @@ export class DefaultComponent implements OnInit {
       next: (id: string) => {
         if (id) {
           this.selectedId = id;
+        }
+
+        if (this.selectedId) {
+          this.customersService.getById(this.selectedId).subscribe({
+            next: (customer: Customer) => {
+              if (customer) {
+                this.selectedCustomer = customer;
+              }
+            }
+          });
         }
       },
     });
