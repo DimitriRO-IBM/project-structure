@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Customer } from '../../../../shared/models/interfaces/api/customer.model';
+import { Observable, of } from 'rxjs';
 import { CustomersService } from '../../../../shared/services/api/customers.service';
-import { DefaultService } from '../../../../shared/services/api/default.service';
 
 @Component({
   selector: 'app-default',
@@ -10,29 +9,22 @@ import { DefaultService } from '../../../../shared/services/api/default.service'
 })
 export class DefaultComponent implements OnInit {
 
-  apiMessage: string = '';
-  customers: Customer[] = [];
+  selectedCustomerId: Observable<string> = of('');
+  selectedId: string = '';
 
   constructor(
-    private defaultService: DefaultService,
     private customersService: CustomersService,
   ) { }
 
   ngOnInit(): void {
-    this.defaultService.getApiMessage().subscribe({
-      next: (message: { message: string }) => {
-        if (message) {
-          this.apiMessage = message.message;
-        }
-      }
-    });
+    this.selectedCustomerId = this.customersService.selectedUser.asObservable();
 
-    this.customersService.getAll().subscribe({
-      next: (customers: Customer[]) => {
-        if (customers && customers.length) {
-          this.customers = customers;
+    this.selectedCustomerId.subscribe({
+      next: (id: string) => {
+        if (id) {
+          this.selectedId = id;
         }
-      }
+      },
     });
   }
 

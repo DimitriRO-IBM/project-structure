@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatOptionSelectionChange } from '@angular/material/core';
+import { Customer } from '../../shared/models/interfaces/api/customer.model';
+import { CustomersService } from '../../shared/services/api/customers.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  customers: Customer[] = [];
+
+  constructor(
+    private customersService: CustomersService,
+  ) { }
 
   ngOnInit(): void {
+    this.customersService.getAll().subscribe({
+      next: (customers: Customer[]) => {
+        if (customers && customers.length) {
+          this.customers = customers;
+        }
+      },
+    });
   }
 
+  onSelectCustomer(event: MatOptionSelectionChange): void {
+    this.customersService.setSelectedCustomer(event.source.value);
+  }
 }

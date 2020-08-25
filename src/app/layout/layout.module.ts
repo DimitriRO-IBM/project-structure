@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatSelectModule } from '@angular/material/select';
 import { ViewsModule } from '../views/views.module';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
@@ -15,10 +16,11 @@ import { LayoutRoutingModule } from './layout-routing.module';
     HeaderComponent,
     FooterComponent,
   ],
-  imports: [
-    CommonModule,
-    LayoutRoutingModule,
-    ViewsModule,
-  ]
+    imports: [
+        CommonModule,
+        LayoutRoutingModule,
+        ViewsModule,
+        MatSelectModule,
+    ]
 })
 export class LayoutModule { }

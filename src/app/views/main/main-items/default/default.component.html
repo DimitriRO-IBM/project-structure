@@ -1,11 +1,9 @@
-<div class="default" *ngIf="apiMessage; else noMessage">
-  {{ apiMessage }}
+<div class="default">
+  Default Component
 
-  <ul *ngIf="customers">
-    <li *ngFor="let customer of customers">
-      {{ customer.firstName }} {{ customer.lastName }}
-    </li>
-  </ul>
+  <div *ngIf="selectedId" style="color: red;">
+    {{ selectedId }}
+  </div>
 </div>
 
 <ng-template #noMessage>

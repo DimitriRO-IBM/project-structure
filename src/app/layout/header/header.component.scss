@@ -1,4 +1,7 @@
 :host {
   width: 100%;
   border: 1px solid blue;
+
+  display: grid;
+  place-items: center;
 }
