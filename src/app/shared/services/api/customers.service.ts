@@ -10,7 +10,7 @@ export class CustomersService {
 
   readonly API_URL: string = 'http://localhost:3000';
 
-  selectedUser: Subject<string> = new Subject();
+  selectedUser: Subject<Customer> = new Subject();
 
   constructor(
     private http: HttpClient,
@@ -20,7 +20,15 @@ export class CustomersService {
     return this.http.get<Customer[]>(`${this.API_URL}/customers`);
   }
 
-  setSelectedCustomer(customerId: string): void {
-    this.selectedUser.next(customerId);
+  getOneByName(name: string): Observable<Customer> {
+    return this.http.post<Customer>(`${this.API_URL}/customers`, {
+      where: {
+        sacrname: name,
+      }
+    });
+  }
+
+  setSelectedCustomer(customer: Customer): void {
+    this.selectedUser.next(customer);
   }
 }

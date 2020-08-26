@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatOptionSelectionChange } from '@angular/material/core';
+import { MatSelectChange } from '@angular/material/select';
 import { Customer } from '../../shared/models/interfaces/api/customer.model';
 import { CustomersService } from '../../shared/services/api/customers.service';
 
@@ -26,7 +27,7 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  onSelectCustomer(event: MatOptionSelectionChange): void {
+  onSelectCustomer(event: MatSelectChange): void {
     this.customersService.setSelectedCustomer(event.source.value);
   }
 }

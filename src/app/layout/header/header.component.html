@@ -1,8 +1,12 @@
 <div class="header">
   <form>
     <mat-form-field appearance="outline">
-      <mat-select>
-        <mat-option *ngFor="let customer of customers" [value]="customer.sacrname" (onSelectionChange)="onSelectCustomer($event)">
+      <mat-select placeholder="Select a customer" #customerSelect (selectionChange)="onSelectCustomer($event)">
+        <mat-select-trigger>
+          {{ customerSelect.value?.sacrname }}
+        </mat-select-trigger>
+        <mat-option *ngFor="let customer of customers"
+                    [value]="customer">
           {{ customer.sacrname }}
         </mat-option>
       </mat-select>

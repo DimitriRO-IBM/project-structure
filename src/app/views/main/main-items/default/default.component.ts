@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { debounce, debounceTime, mergeMap } from 'rxjs/operators';
 import { Customer } from '../../../../shared/models/interfaces/api/customer.model';
 import { CustomersService } from '../../../../shared/services/api/customers.service';
 
@@ -10,8 +11,7 @@ import { CustomersService } from '../../../../shared/services/api/customers.serv
 })
 export class DefaultComponent implements OnInit {
 
-  selectedCustomerId: Observable<string> = of('');
-  selectedId: string = '';
+  selectedName: string = '';
   selectedCustomer: Customer | undefined;
 
   constructor(
@@ -19,12 +19,10 @@ export class DefaultComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.selectedCustomerId = this.customersService.selectedUser.asObservable();
-
-    this.selectedCustomerId.subscribe({
-      next: (id: string) => {
-        if (id) {
-          this.selectedId = id;
+    this.customersService.selectedUser.asObservable().subscribe({
+      next: (customer: Customer) => {
+        if (customer) {
+          this.selectedCustomer = customer;
         }
       },
     });
