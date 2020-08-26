@@ -26,16 +26,6 @@ export class DefaultComponent implements OnInit {
         if (id) {
           this.selectedId = id;
         }
-
-        if (this.selectedId) {
-          this.customersService.getById(this.selectedId).subscribe({
-            next: (customer: Customer) => {
-              if (customer) {
-                this.selectedCustomer = customer;
-              }
-            }
-          });
-        }
       },
     });
   }

@@ -20,10 +20,6 @@ export class CustomersService {
     return this.http.get<Customer[]>(`${this.API_URL}/customers`);
   }
 
-  getById(id: string): Observable<Customer> {
-    return this.http.get<Customer>(`${this.API_URL}/customers/${id}`);
-  }
-
   setSelectedCustomer(customerId: string): void {
     this.selectedUser.next(customerId);
   }

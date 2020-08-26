@@ -2,8 +2,8 @@
   <form>
     <mat-form-field appearance="outline">
       <mat-select>
-        <mat-option *ngFor="let customer of customers" [value]="customer._id" (onSelectionChange)="onSelectCustomer($event)">
-          {{ customer.firstName }} {{ customer.lastName }}
+        <mat-option *ngFor="let customer of customers" [value]="customer.sacrname" (onSelectionChange)="onSelectCustomer($event)">
+          {{ customer.sacrname }}
         </mat-option>
       </mat-select>
     </mat-form-field>
