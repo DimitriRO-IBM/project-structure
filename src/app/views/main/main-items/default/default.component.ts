@@ -14,11 +14,33 @@ export class DefaultComponent implements OnInit {
   selectedCustomer: Customer | undefined;
 
   fileToSend: File | null | undefined = null;
+  customers: Customer[] = [];
+  sortedCustomers: Customer[] = [];
+
+  sortOrder: number = 0;
+
+  tableKeys: string[] = [];
 
   constructor(
     private customersService: CustomersService,
     private defaultService: DefaultService,
-  ) { }
+  ) {
+    this.tableKeys = [
+      'sacrname',
+      'srmname1',
+      'srmname2',
+      'srmname3',
+      'srmname4',
+      'srmname5',
+      'subclient',
+      'restricted',
+      'portal',
+      'srmeu',
+      'brod',
+      'stor',
+      'active',
+    ];
+  }
 
   ngOnInit(): void {
     this.customersService.selectedUser.asObservable().subscribe({
@@ -26,6 +48,13 @@ export class DefaultComponent implements OnInit {
         if (customer) {
           this.selectedCustomer = customer;
         }
+      },
+    });
+
+    this.customersService.getAll().subscribe({
+      next: (customers: Customer[]) => {
+        this.customers = customers;
+        this.sortedCustomers = [...this.customers];
       },
     });
   }
@@ -41,5 +70,51 @@ export class DefaultComponent implements OnInit {
           console.log(value);
         },
       });
+  }
+
+  sortTableBy(key: string): void {
+    let multiplier: number;
+    const order: number = this.changeSortOrder();
+
+    switch (order) {
+      case 0:
+        // On récupère la valeur du tableau de départ
+        this.sortedCustomers = [...this.customers];
+        break;
+      case 1:
+        // ASC
+        multiplier = 1;
+        break;
+      case 2:
+        // DESC
+        multiplier = -1;
+        break;
+    }
+
+    if (order !== 0) {
+      this.sortedCustomers.sort((a: Customer, b: Customer): number => {
+        // @ts-ignore
+        if (a[key] > b[key]) {
+          return multiplier;
+        }
+        // @ts-ignore
+        if (a[key] < b[key]) {
+          return -multiplier;
+        }
+        return 0;
+      });
+    }
+  }
+
+  changeSortOrder(): number {
+    // DESC => NULL
+    if (this.sortOrder === 2) {
+      this.sortOrder = 0;
+    } else {
+      // 0: NULL, 1: ASC, 2: DESC
+      this.sortOrder += 1;
+    }
+
+    return this.sortOrder;
   }
 }

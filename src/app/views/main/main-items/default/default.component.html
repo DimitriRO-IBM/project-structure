@@ -11,6 +11,31 @@
       Envoyer le fichier à l'API
     </button>
   </div>
+
+  <table *ngIf="customers" style="overflow: scroll; width: 800px; height: 600px; display: table-caption;">
+    <thead>
+      <tr>
+        <th *ngFor="let key of tableKeys" (click)="sortTableBy(key)"> {{ key }} {{ 'ordre: ' + sortOrder }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of sortedCustomers">
+        <td>{{ customer.sacrname }}</td>
+        <td>{{ customer.srmname1 }}</td>
+        <td>{{ customer.srmname2 }}</td>
+        <td>{{ customer.srmname3 }}</td>
+        <td>{{ customer.srmname4 }}</td>
+        <td>{{ customer.srmname5 }}</td>
+        <td>{{ customer.subclient }}</td>
+        <td>{{ customer.restricted }}</td>
+        <td>{{ customer.portal }}</td>
+        <td>{{ customer.srmeu }}</td>
+        <td>{{ customer.brod }}</td>
+        <td>{{ customer.stor }}</td>
+        <td>{{ customer.active }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <ng-template #noMessage>
