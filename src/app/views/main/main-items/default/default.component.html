@@ -4,6 +4,13 @@
   <div *ngIf="selectedCustomer" style="color: #ff0000;">
     {{ selectedCustomer | json }}
   </div>
+
+  <div class="file-input">
+    <input type="file" name="uploadedFile" (change)="onFileUpload($event)">
+    <button mat-flat-button color="primary" (click)="sendFile()">
+      Envoyer le fichier à l'API
+    </button>
+  </div>
 </div>
 
 <ng-template #noMessage>

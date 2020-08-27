@@ -16,4 +16,13 @@ export class DefaultService {
   getApiMessage(): Observable<{ message: string }> {
     return this.http.get<{ message: string }>(`${this.API_URL}/nodes`);
   }
+
+  sendFile(file: File | null | undefined): Observable<unknown> {
+    const formData = new FormData();
+    if (file) {
+      formData.append('uploadedFile', file);
+    }
+
+    return this.http.post(`${this.API_URL}/fileUpload`, formData);
+  }
 }
