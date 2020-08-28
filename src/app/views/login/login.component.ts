@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from '../../shared/services/api/login.service';
+
+import { parse, ParseResult } from 'papaparse';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +18,13 @@ export class LoginComponent implements OnInit {
     id: 1,
     value: 'zOS Reports',
   }];
+
+  csvHeaders: string[] = [];
+  // tslint:disable-next-line:no-any
+  csvData: any[] = [];
+
+  isLoading: boolean = true;
+  loaded: boolean = false;
 
   loginForm: FormGroup = this.fb.group({
     username: ['', Validators.compose([
@@ -34,6 +44,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
+    private loginService: LoginService,
   ) { }
 
   ngOnInit(): void {
@@ -58,4 +69,33 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  loadCsvFile(): void {
+    this.isLoading = true;
+    this.loginService.getCsvAsFile().subscribe({
+      next: (data: Blob): void => {
+        if (data) {
+          const file: File = new File([data], data.type);
+          parse((file), {
+            header: true,
+            error: (error) => {
+              console.error(error);
+            },
+            complete: (results: ParseResult<unknown>) => {
+              console.log('Parsing complete ! Here is your result: ', results);
+              this.csvHeaders = results.meta.fields;
+              // tslint:disable-next-line:no-any
+              this.csvData = [...(results.data as any)];
+            },
+          });
+        }
+      },
+      error: (error: Error): void => {
+        throw error;
+      },
+      complete: (): void => {
+        this.isLoading = false;
+        this.loaded = true;
+      }
+    });
+  }
 }
