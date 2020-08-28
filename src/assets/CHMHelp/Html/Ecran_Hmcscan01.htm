@@ -1,0 +1,201 @@
+<HTML>
+<HEAD>
+<META CHARSET="ISO-8859-1">
+<TITLE>HMCScan - HMC Inventory</TITLE>
+</HEAD>
+
+<BODY BGCOLOR=WHITE>
+
+<FONT FACE=Verdana>
+<FONT SIZE=3 COLOR=NAVY>HMCScan - HMC Inventory<FONT SIZE=2 COLOR=BLACK>
+<HR><BR>
+
+<FONT COLOR=MAROON><B>1 - Customer Selection</B></FONT><BR>
+<BR>
+The top of the window allows you to select the 3 following parameters :<BR>
+<UL>
+<LI>The Customer Name</LI>
+<LI>The HMC Name</LI>
+<LI>The Date</LI>
+</UL>
+
+Each time you select a new Customer, SACR will update automatically the "HMC" list and the "Date" list.<BR>
+You have to click on the <B>[Ok]</B> button to reload new data.<BR>
+<BR>
+<B>Button [...]</B><BR>
+If the HMC list contains more than 2 HMC, you will be able to do a "Custom Selection" using this button.<BR>
+<BR>
+<B>Button [?]</B><BR>
+This button is used to display the current Custom HMC Selection.<BR>
+<BR>
+
+<B>Button [Import HMCScan Excel File]</B><BR>
+HMCScan Data must be imported from HMCScan Excel Files.<BR>
+Click on this button to import an HMCScan Excel File to the SACR Database.<BR>
+You will obtain the <A HREF=Ecran_Hmcscan02.htm>Excel File Import</A> Window.<BR>
+<BR>
+
+<B>Searching</B><BR>
+To search an Item (Box, LPAR ...), type the characters to be found and click the
+<IMG SRC=../Images/Loupe.bmp BORDER=0> button, or press the [Enter] key.<BR>
+If the criteria matches, the Item line will be highlighted.<BR>
+Use <B>[Previous]</B> and <B>[Next]</B> buttons to highlight the others Items.<BR>
+<BR><BR>
+
+
+<FONT COLOR=MAROON><B>2 - Tab [HMC View]</B></FONT><BR>
+<BR>
+This Tab displays the number of Items for the selected Customer, the selected HMC and the selected Date.<BR>
+You can also select the Asset Status :<BR>
+<UL>
+<LI>All Assets (ON and OFF)</LI>
+<LI>Only ON Assets</LI>
+<LI>Only OFF Assets</LI>
+</UL>
+<BR>
+
+<B>Button [View Details]</B><BR>
+You can display the list of Items concerned by the selection by pressing the <B>[Enter]</B> key or using this button.<BR> 
+You will obtain the <A HREF=Ecran_Hmcscan04.htm>Details</A> Window.<BR>
+Note : A double click on a line will open the same window.<BR>
+<BR>
+
+<B>Button [View LPAR Profiles]</B><BR>
+Click on this button to see defined LPAR Profiles.<BR>
+<BR>
+
+<B>Button [Profiles Crosschecking]</B><BR>
+Click on this button to see differences between Active Profiles and Running LPARs.<BR>
+You will obtain the <A HREF=Ecran_Hmcscan07.htm>Profiles Cross Checking</A> Window.<BR>
+<BR>
+
+<B>Button [Define Locations]</B><BR>
+HMCScan Excel Files do not have the "Box Location" information. So you have to input this information manually using
+this button. You will obtain the <A HREF=Ecran_Hmcscan03.htm>Boxes Locations</A> Window.<BR>
+<BR>
+
+<B>Graphic Commands</B><BR>
+These are the <A HREF=Comgraph.htm>Graphic Commands</A>.<BR>
+<BR>
+<BR>
+
+<FONT COLOR=MAROON><B>3 - Tab [End of Support]</B></FONT><BR>
+<BR>
+This Tab displays a table and some graphs.<BR>
+<UL>
+<LI>The table shows, for every OS (AIX, VIO, OS400), the version number, the date of the End of Support and the number
+of Assets. SACR counts the number of Assets with the OS version "Ok", "To be Upgraded",
+"Not Supported" and "Not Applicable".<BR>
+The last line of the table displays the different totals.<BR><BR></LI>
+
+<LI>The first graph is the "TOTAL OF ASSETS" graph.<BR>
+The following graphs are done for every OS.</LI>
+</UL>
+<BR>
+
+<B>End of Support Date Selection</B><BR>
+You can display End of Support Counts using one of the 2 following dates :<BR>
+<UL>
+<LI>Full Support Date</LI>
+<LI>End Of Life Support Date</LI>
+</UL>
+The 2 dates are displayed on the table in this way :
+<BR>
+Full Support Date | End Of Life Date<BR>
+<BR>
+Exemple :<BR>
+01-2015 | 01-2020<BR>
+<BR>
+
+<B>Button [Options]</B><BR>
+Click on this button to select the OS Configuration File to be used.<BR>
+You will obtain the <A HREF=Ecran_Visuglobal4.htm>End of Support Options</A> Window.<BR>
+<BR>
+
+<B>Button [End of Support Forecast]</B><BR>
+Click on this button to display
+the <A HREF=Ecran_Visuglobal2.htm>End of Support Forecast</A> Window.<BR>
+<BR>
+
+<B>Button [Details]</B><BR>
+You can select / deselect one or more lines on different tables using the [Ctrl]+Clic command. Then, you can display
+the list of Assets concerned by the selection by pressing the <B>[Enter]</B> key or using the button [Details].<BR> 
+You will obtain the <A HREF=Ecran_Visuglobal3.htm>Details</A> Window.<BR>
+Note : A double click on a line will open the same window.<BR>
+<BR>
+<BR>
+
+<FONT COLOR=MAROON><B>4 - Tab [Assets Inventory]</B></FONT><BR>
+<BR>
+This Tab displays the list of Assets (Boxes and LPARs). You can sort the list clicking on the head of the columns.<BR>
+<BR>
+<B>Details</B><BR>
+You can obtain more informtion with a double click on a line. You will obtain :<BR>
+<UL>
+<LI><A HREF=Ecran_Hmcvisubox1.htm>Box Details</A> if you select a Box</LI>
+<LI><A HREF=Ecran_Hmcvisulpar.htm>LPAR Details</A> if you select an LPAR</LI>
+</UL>
+<BR>
+
+<FONT COLOR=MAROON><B>5 - Tab [Boxes View]</B></FONT><BR>
+<BR>
+This Tab displays a Tree View with Boxes and LPARs.<BR>
+You can obtain more details with the following buttons :<BR>
+<UL>
+<LI>[BOX : List of LPARs]</LI>
+<LI>[BOX : Details]</LI>
+<LI>[LPAR : Details]</LI>
+</UL>
+
+<FONT COLOR=MAROON><B>6 - Tab [Location View]</B></FONT><BR>
+<BR>
+This Tab displays a Tree View with Locations and Boxes.<BR>
+You can obtain more details with the following buttons :<BR>
+<UL>
+<LI>[Location : List of Boxes]</LI>
+<LI>[BOX : List of LPARs]</LI>
+<LI>[BOX : Details]</LI>
+</UL>
+<BR>
+
+<FONT COLOR=MAROON><B>Commands :</B></FONT><BR>
+<BR>
+
+<B>Button <IMG SRC=../Images/b_expand1.bmp BORDER=0></B><BR>
+Click this button to collapse all Items on a Tree View.<BR>
+<BR>
+
+<B>Button <IMG SRC=../Images/b_expand2.bmp BORDER=0></B><BR>
+Click this button to expand all Items on a Tree View.<BR>
+<BR>
+
+<B>Button [View HTML]</B><BR>
+Click on this button to generate a page on HTML format. You can select items to be displayed.<BR>
+The page will be displayed using the selected HTML Browser.<BR>
+<BR>
+
+<B>Button [Copy Table]</B><BR>
+Click on this button to copy the displayed table on the Windows Clipboard. The program
+will ask you to select first the Field Separator.<BR>
+You will obtain the <A HREF=Ecran_Selsepar.htm>Field Separator</A> Window. You can then
+paste the table on another program using [Cntrl+V] shortcut.<BR>
+<BR>
+
+<B>Button [Copy Graph]</B><BR>
+Click on this button to copy the displayed graph on the Windows Clipboard. You will obtain
+the <A HREF=Ecran_Seltaille.htm>Graphic Size Selection</A> window.<BR>
+Then you can paste the graph on another program using [Cntrl+V] shortcut.<BR>
+<BR>
+
+<B>Button [Export CSV]</B><BR>
+Click on this button to export Assets Inventory to a CSV file.<BR>
+You will obtain <A HREF=Ecran_Watson.htm>Export to CSV Files</A> window.<BR>
+<BR>
+
+<B>Button [Quit]</B><BR>
+Click on this button to return to the previous screen.<BR>
+<BR>
+
+</BODY>
+</HTML>
+

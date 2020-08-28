@@ -1,0 +1,113 @@
+<HTML>
+<HEAD>
+<META CHARSET="ISO-8859-1">
+<TITLE>View Details</TITLE>
+</HEAD>
+
+<BODY BGCOLOR=WHITE>
+
+<FONT FACE=Verdana>
+<FONT SIZE=3 COLOR=NAVY>View Details<FONT SIZE=2 COLOR=BLACK>
+<HR><BR>
+
+This window displays complete information related with a Server.<BR>
+The top of the window gives general information :<BR>
+<BR>
+- Customer Name<BR>
+- Server Name<BR>
+- Subclient ID 1<BR>
+- Subclient ID 2<BR>
+- Type ("Server" or "LPAR")<BR>
+- Operating System<BR>
+- OS Level<BR>
+- Box Name<BR>
+- Model Number<BR>
+<BR>
+
+<B>Metric Selection</B><BR>
+You can select the Metric to be displayed using the associated buttons :<BR>
+<BLOCKQUOTE>
+<UL>
+<LI>CPU</LI>
+<LI>Memory</LI>
+<LI>Disk</LI>
+</UL>
+</BLOCKQUOTE>
+<BR>
+
+<B>Memory Calculed Metrics</B><BR>
+<BR>
+For AIX (Lpars and Servers) and LINUX (Servers), the program displays a calculated Metric : [Memory Available for Applications (Mo)].<BR>
+These are the formulas used to calculate this Metric :<BR>
+<BR>
+
+<B>AIX :</B><BR>
+[mem_pages_avail_applications] = MAX((free pages - minfree),0) + MAX((file pages - minperm),0)<BR>
+[Memory Available for Applications (Mo)] = ( [mem_pages_avail_applications] x 4096 ) / (1024 x 1024)<BR>
+<BR>
+
+<B>LINUX Server :</B><BR>
+[memory_effective_used_percent] = (memory free + memory buffer + memory cache)/(installed memory)<BR>
+[Memory Available for Applications (Mo)] = [memory_size] - ( [memory_effective_used_percent] x [memory_size] / 100 )<BR>
+<BR>
+<BR>
+
+Thresholds saved in memory are displayed according the selected Metric.<BR>
+<BR>
+
+For each Metric, the program displays on a table the SRM Fields and the corresponding
+values for the 4 last months.<BR>
+<BR>
+<BR>
+
+<FONT COLOR=MAROON><B>Commands :</B></FONT><BR>
+<BR>
+
+<B>Button [Volume Groups]</B><BR>
+Click on this button to display the list of Volume Groups of for the selected server.
+You will open <A HREF=Ecran_Visuvolume.htm>Volume Groups</A>.<BR>
+<BR>
+
+<B>Button [Filesystems]</B><BR>
+Click on this button to display the list of Filesystems of for the selected server.
+You will open <A HREF=Ecran_Visufs.htm>Filesystems</A>.<BR>
+<BR>
+
+<B>Button [Monthly View]</B><BR>
+Click on this button to display Daily data and Hourly data. You will open
+<A HREF=Ecran_Viewdetails2.htm>Monthly View</A>.<BR>
+<BR>
+
+<B>Button [Forecast View]</B><BR>
+Click on this button to display Forecast Values. You will open
+<A HREF=Ecran_Viewdetails3.htm>Forecast View</A>.<BR>
+<BR>
+
+<B>Button [Copy Infos]</B><BR>
+Click on this button to copy general information of the Server (Customer, Server ...).
+You can then paste the information on another program using [Cntrl+V] shortcut.<BR>
+<BR>
+
+<B>Button [Copy Table]</B><BR>
+Click on this button to copy the table on the Windows Clipboard. You will first obtain
+<A HREF=Ecran_Selcopy.htm>Copy Table</A> window in order to select the copy format. You can
+then paste the table on another program using [Cntrl+V] shortcut.<BR>
+<BR>
+
+<B>Button [Copy Graph]</B><BR>
+Click on this button to copy the graph on the Windows Clipboard. You will obtain
+<A HREF=Ecran_Seltaille.htm>Graphic Size Selection</A>.<BR>
+Then you can paste the graph on another program using [Cntrl+V] shortcut.<BR>
+<BR>
+
+<B>Button [View HTML]</B><BR>
+Click on this button to generate a page on HTML format containing Tables for the
+three Metrics. The page will be displayed using the selected HTML Browser.<BR>
+<BR>
+
+<B>Button [Quit]</B><BR>
+Click on this button to return to the previous screen.<BR>
+<BR>
+</BODY>
+</HTML>
+

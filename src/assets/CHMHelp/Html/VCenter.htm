@@ -1,0 +1,76 @@
+<HTML>
+<HEAD>
+<META CHARSET="ISO-8859-1">
+<TITLE>VCenter Architecture</TITLE>
+</HEAD>
+
+<BODY BGCOLOR=WHITE>
+
+<FONT FACE=Verdana>
+<FONT SIZE=3 COLOR=NAVY>VCenter Architecture<FONT SIZE=2 COLOR=BLACK>
+<HR><BR>
+
+<BLOCKQUOTE>
+<IMG SRC=../Images/VCenter.bmp BORDER=0></TD>
+<BR>
+	
+<B>Datacenter</B><BR>
+A Datacenter is the primary container of inventory objects
+such as ESX and Virtual Machines (VMs). From the Datacenter,
+you can add and organize inventory objects. Typically you add
+ESX and Clusters to a Datacenter.<BR><BR>
+VCenter Server can obtain multiple Datacenters. Large companies
+might use multiple Datacenters to represent organizational
+units in their enterprise.<BR><BR>
+Inventory objects can interact within Datacenters, but interaction
+across Datacenters is limited. For examle, you can move a Virtual
+Machine with vMotion technology across ESX within a Datacenter
+but not to en ESW in another Datacenter.<BR>
+<BR>
+
+<B>Datasore</B><BR>
+Datastores in vSphere are storage containers for files. They could
+be located on a local server hard drive or across the network on a SAN.
+Datastores hide the specifics of each storage device and provide a
+uniform model for storing virtual machine files.<BR>
+<BR>
+Datastores are used to hold virtual machine files, templates, and ISO images.
+They can be formatted with VMFS (Virtual Machine File System, a clustered
+file system from VMware), or with a file system native to the storage
+provider (in the case of a NAS/NFS device).<BR>
+<BR>
+
+<B>Cluster</B><BR>
+A Cluster is a group of ESX. When you add an ESX to a Cluster,
+the ESX resources become part of the Cluster's resources.
+The Cluster manages the resources of all ESX within it.<BR><BR>
+Clusters enable the Vphere High Availability (HA) end VSphere
+Distributed Resource Scheduler (DRS) solutions.<BR>
+<BR>
+
+<B>ESX</B><BR>
+An ESX (or Host) is a computer that uses virtualization software,
+such as ESX or ESXi, to run Virtual Machines (VMs).<BR>
+ESX provides :<BR>
+- The CPU and Memory resources that Virtual Machines use<BR>
+- Give to the VMs access to Storage<BR>
+- Give to the VMs Network connectivity<BR>
+<BR>
+
+<B>Virtual Machines</B><BR>
+A Virtual Machine (VM) is a software that, like a physical computer,
+runs on Operating System and applications. An Operating System 
+installed on a Virtual Machine is called "guest Operating System".<BR><BR>
+Because every Virtual Machine is an isolated computing environment,
+you can use Virtual Machines as desktop or workstation environments,
+as testing environments or to consolidate server applications.<BR>
+<BR>
+In VCenter Server, Virtual Machines run on ESX or Clusters. The same ESX
+can run many Virtual Machines.<BR>
+<BR>
+</BLOCKQUOTE>
+<BR>
+
+</BODY>
+</HTML>
+

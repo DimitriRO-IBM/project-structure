@@ -13,7 +13,7 @@ export class GlobalInventoryComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.helpService.setHelp(`Bonjour,\n\nVous êtes bien sur la page "Global Inventory" de l'application.\nVoici votre aide contextuelle.\n\n${Date.now()}`);
+    this.helpService.setHelp('Ecran_Visuglobal1.htm');
   }
 
 }

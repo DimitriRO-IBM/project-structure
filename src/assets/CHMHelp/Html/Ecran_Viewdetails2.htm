@@ -1,0 +1,121 @@
+<HTML>
+<HEAD>
+<META CHARSET="ISO-8859-1">
+<TITLE>View Details</TITLE>
+</HEAD>
+
+<BODY BGCOLOR=WHITE>
+
+<FONT FACE=Verdana>
+<FONT SIZE=3 COLOR=NAVY>Monthly View / 15 Minutes View<FONT SIZE=2 COLOR=BLACK>
+<HR><BR>
+
+This window displays Weekly Data, Daily Data, Hourly Data and 15 Minutes Data for the selected Server and the selected Metric.<BR>
+The top of the window gives general information :<BR>
+<BR>
+- The Month to be displayed<BR>
+- The Customer Name<BR>
+- The Server Name<BR>
+- The Type ("Server" or "LPAR")<BR>
+- The corresponding CPU Thresholds<BR>
+<BR>
+
+<FONT COLOR=MAROON><B>View Selection</B></FONT><BR>
+<BR>
+Click on the selected Tab <B>[Weekly Details]</B>, <B>[Daily Details]</B> or <B>[Hourly Details]</B>.<BR>
+<BR>
+<B>[Hourly Details] and 15 Minutes View</B><BR>
+You can zoom the graph using the <B><IMG SRC=../Images/Coche.gif BORDER=0> Zoom</B> option.<BR>
+<BR>
+
+<B>Display</B><BR>
+For AIX (Lpars and Servers) and LINUX (Servers) Memory Details, you can select the Metric to be displayed on the graph :<BR>
+<BR>
+AIX :<BR>
+- Memory Swap Pct Used<BR>
+- Memory Available for Applications (Mo)<BR>
+- Memory Available for Applications (%)<BR>
+<BR>
+
+LINUX Server :<BR>
+- Memory Used Percent<BR>
+- Memory Available for Applications (Mo)<BR>
+- Memory Available for Applications (%)<BR>
+<BR>
+
+<B>Calculation of [Memory Available for Applications (Mo)]</B><BR>
+<BR>
+These are the formulas used to calculate this Metric :<BR>
+<BR>
+
+<B>AIX :</B><BR>
+[mem_pages_avail_applications] = MAX((free pages - minfree),0) + MAX((file pages - minperm),0)<BR>
+[Memory Available for Applications (Mo)] = ( [mem_pages_avail_applications] x 4096 ) / (1024 x 1024)<BR>
+<BR>
+
+<B>LINUX Server :</B><BR>
+[memory_effective_used_percent] = (memory free + memory buffer + memory cache)/(installed memory)<BR>
+[Memory Available for Applications (Mo)] = [memory_size] - ( [memory_effective_used_percent] x [memory_size] / 100 )<BR>
+<BR>
+<BR>
+
+<A HREF=Collectquality.htm>Collect Quality Formula</A>.<BR>
+<BR><BR>
+
+<FONT COLOR=MAROON><B>Commands :</B></FONT><BR>
+<BR>
+
+<IMG SRC=../Images/Coche.gif BORDER=0> <B>Display Forecast</B><BR>
+Select this option to display Forecast values on the graphs (Weekly and Dailu only).<BR>
+<BR>
+
+<B>Button [SOAP Queries]</B><BR>
+When you click on this buuton you will get the following commands :<BR>
+<UL>
+<LI><B>Display URLs</B><BR>
+Select this command to show SOAP URLs in a single line.<BR><BR></LI>
+
+<LI><B>Test Weekly Query</B><BR>
+Select this command to launch the Weekly SOAP Query in the Web Browser.<BR><BR></LI>
+
+<LI><B>Test Daily Query</B><BR>
+Select this command to launch the Daily SOAP Query in the Web Browser.<BR><BR></LI>
+
+<LI><B>Test Hourly Query</B><BR>
+Select this command to launch the Hourly SOAP Query in the Web Browser.</LI>
+
+<LI><B>Test 15 Minutes Query</B><BR>
+Select this command to launch the 15 Minutes SOAP Query in the Web Browser.</LI>
+</UL>
+<BR>
+
+<B>Button [Vew VM Details]</B><BR>
+This button is available only for VMWARE ESX Reports.<BR>
+You will obtain the <A HREF=Ecran_Visuesx2.htm>ESX - Daily VM Details</A> Window.<BR>
+<BR>
+
+<B>Button [Copy Table]</B><BR>
+Click on this button to copy the table on the Windows Clipboard. The program
+will ask you to select first the Field Separator.<BR>
+You will obtain the <A HREF=Ecran_Selsepar.htm>Field Separator</A> Window. You can then
+paste the table on another program using [Cntrl+V] shortcut.<BR>
+<BR>
+
+<B>Button [Copy Graph]</B><BR>
+Click on this button to copy the graph of the selected Tab on the Windows Clipboard.
+You will obtain the <A HREF=Ecran_Seltaille.htm>Graphic Size Selection</A> window.<BR>
+Then you can paste the graph on another program using [Cntrl+V] shortcut.<BR>
+<BR>
+
+<B>Button [View HTML]</B><BR>
+Click on this button to generate a page on HTML format containing Tables for the
+Daily View and the Hourly View. The page will be displayed using the selected HTML Browser.<BR>
+<BR>
+
+<B>Button [Quit]</B><BR>
+Click on this button to return to the previous screen.<BR>
+<BR>
+
+</BODY>
+</HTML>
+

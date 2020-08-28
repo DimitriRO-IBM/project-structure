@@ -1,0 +1,178 @@
+<HTML>
+<HEAD>
+<META CHARSET="ISO-8859-1">
+<TITLE>VCenter Allocated Resources</TITLE>
+</HEAD>
+
+<BODY BGCOLOR=WHITE>
+
+<FONT FACE=Verdana>
+<FONT SIZE=3 COLOR=NAVY>VCenter Allocated Resources<FONT SIZE=2 COLOR=BLACK>
+<HR><BR>
+
+<FONT COLOR=MAROON><B>1 - Customer Selection</B></FONT><BR>
+<BR>
+The top of the window allows you to select the 3 following parameters :<BR>
+<UL>
+<LI>The Customer Name</LI>
+<LI>The VCenter Name</LI>
+<LI>The Date</LI>
+</UL>
+
+<IMG SRC=../Images/Rvtools1.bmp BORDER=0><BR>
+<BR>
+Each time you select a new Customer, SACR will update automatically the "VCenter" list and the "Date" list.<BR>
+You have to click on the <B>[Ok]</B> button to reload new data.<BR>
+<BR>
+<B>Button [...]</B><BR>
+If the VCenter list contains more than 2 VCenters, you will be able to do a "Custom Selection" using this button.<BR>
+<BR>
+<B>Button [?]</B><BR>
+This button is used to display the current Custom VCenter Selection.<BR>
+<BR>
+
+<B>View Selection</B><BR>
+You can select the Allocated Resources View :<BR>
+<UL>
+<LI>By Clusters</LI>
+<LI>By ESX</LI>
+</UL>
+
+For the Clusters view, you can also select one on this 3 modes :<BR>
+<BLOCKQUOTE>
+<IMG SRC=../Images/Radio.gif BORDER=0> Nominal Mode<BR>
+<BR>
+<IMG SRC=../Images/Radio.gif BORDER=0> Failover or Maintenance Mode<BR>
+<BR>
+<IMG SRC=../Images/Radio.gif BORDER=0> Custom Failover Mode<BR>
+<BR>
+When you willingly place an ESX host in maintenance to service it or when the
+host fail unexpectedly for some reasons the Virtual machines that are running
+on this host will need to be migrated to another one (either manually or
+automatically by DRS) or shut down.<BR>
+</BLOCKQUOTE>
+<BR>
+
+<FONT COLOR=MAROON><B>2 - Allocated Resources</B></FONT><BR>
+<BR>
+The window displays 2 tables containing data of the selected VCenters.<BR>
+For each Cluster, tables give these information in Nominal Mode :<BR>
+<BR>
+
+<TABLE BORDER=0>
+<TR>
+<TD VALIGN=TOP><FONT FACE=Verdana SIZE=2>
+<B>Table 1</B><BR>	
+01 : ESX Count<BR>
+02 : Number of VM ON<BR>
+03 : Number of VM OFF<BR>
+04 : Number of Real Cores<BR>
+05 : Total Virtual CPU (vCPU)<BR>
+06 : Available Virtual CPU (vCPU)<BR>
+07 : Effective Memory (GB)<BR>
+08 : Total Virtual Memory (vRAM) (GB)<BR>
+09 : Available Virtual Memory (vRAM)<BR>
+<BR>
+<B>Table 2</B><BR>
+10 : Average vCPU Slot<BR>
+11 : Average vRAM Slot<BR>
+12 : Available Slots<BR>
+13 : Selection Column [•]<BR>
+14 : Ratio 1 : vCPU / Cores<BR>
+15 : Ratio 1 : Applied Value<BR>
+16 : Ratio 2 : vRAM / Effective Mem<BR>
+17 : Ratio 2 : Applied Value<BR>
+</TD>
+
+<TD>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</TD>
+
+<TD VALIGN=TOP><FONT FACE=Verdana SIZE=2>
+<BR><BR><BR><BR><BR>
+Sum of the Number of VMs CPUs<BR>
+(Col15 x Col04) - Col05<BR>
+<BR>
+Sum of the Memory of VMs<BR>
+(col17 x Col07) - Col08<BR>
+<BR><BR>
+Col05 / Col02<BR>
+Col08 / Col02<BR>
+See calculation below<BR><BR>
+Col05 / Col04<BR><BR>
+Col08 / Col07<BR>
+</TD>
+</TR>
+</TABLE>
+<BR>
+
+<B>Available Slots Calculation :</B><BR>
+R1 = Col06 / Col10<BR>
+R2 = Col09 / Col11<BR>
+Available Slots = Minima (R1, R2)<BR>
+<BR>
+
+<B>Tip :</B><BR>
+Click with the right button of the mouse on a cell to display Formula.
+<BR>
+<BR>
+
+<FONT COLOR=MAROON><B>Commands :</B></FONT><BR>
+<BR>
+
+<B>Cluster Selection</B><BR>
+You can select a Cluster in the table 2 using one of these methods :<BR>
+<UL>
+<LI>Click on the column [•]</LI>
+<LI>Press the [Space] bar</LI>
+</UL>
+<BR>
+
+<B>Button [Select All]</B><BR>
+Use this button to select all the Clusters in the table.<BR>
+<BR>
+
+<B>Button [Deselect All]</B><BR>
+Use this button to deselect all the Clusters in the table.<BR>
+<BR>
+
+<B>Button [Update Applied Ratios]</B><BR>
+Click on this button to define your Personnal Ratios 1 and 2.<BR>
+You will obtain : <A HREF=Ecran_Rvtratios.htm>CPU and Memory Applied Ratios</A>.<BR>
+<BR>
+
+<B>Button [Recommendations for Selected Cluster]</B><BR>
+Click on this button to display an complementary information message.<BR>
+<BR>
+
+<B>Button [Failover Info]</B><BR>
+This button displays how are calculated values of CPU and Memory on
+Failover or Maintenance modes.<BR>
+<BR>
+
+<B>Button [Edit Failover]</B><BR>
+Click on this button to modify your Custom Failover Parameters.<BR>
+You will obtain : <A HREF=Ecran_Rvtsaisfail.htm>Custom Failover Parameters</A>.<BR>
+<BR>
+
+<B>Button [Cluster Details]</B><BR>
+Click on this button to view details of the selected Cluster.<BR>
+You will obtain the <A HREF=Ecran_Rvtvisuclus.htm>Cluster Details</A> Window.<BR> 
+<BR>
+
+<B>Button [View HTML]</B><BR>
+Click on this button to generate a page on HTML format containing the list of Items.
+The page will be displayed using the selected HTML Browser.<BR>
+<BR>
+
+<B>Button [Copy Tables]</B><BR>
+Click on this button to copy the displayed tables on the Windows Clipboard. The program
+will ask you to select first the Field Separator.<BR>
+You will obtain the <A HREF=Ecran_Selsepar.htm>Field Separator</A> Window. You can then
+paste the table on another program using [Cntrl+V] shortcut.<BR>
+<BR>
+
+<B>Button [Quit]</B><BR>
+Click on this button to return to the previous screen.<BR>
+<BR>
+</BODY>
+</HTML>
+

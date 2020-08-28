@@ -1,0 +1,97 @@
+<HTML>
+<HEAD>
+<META CHARSET="ISO-8859-1">
+<TITLE>Infrastructure View / Boxes Consumption View</TITLE>
+</HEAD>
+
+<BODY BGCOLOR=WHITE>
+
+<FONT FACE=Verdana>
+<FONT SIZE=3 COLOR=NAVY>Infrastructure View / Boxes Consumption View<FONT SIZE=2 COLOR=BLACK>
+<HR><BR>
+
+This window displays two kinds of values downloaded for the 13 last months :<BR>
+<UL>
+<LI><B>Infrastructure View</B><BR>
+In this case, you can select one of the following Metrics :<BR><BR>
+- Number of LPARs/Servers<BR>
+- Number of LPARs per Box<BR>
+- Number of Processors<BR>
+- Number of Virtual Processors<BR>
+- Memory Size in GB<BR>
+- Disk Size in TB<BR>
+<BR></LI>
+
+<LI><B>Boxes Consumption View</B><BR>
+In this case, select a Box on the list. The program will display, for the 13 last months :<BR>
+<BLOCKQUOTE>
+<B>AIX</B><BR>
+- Number of LPARs<BR>
+- Number of CPU (Field <I>config_cpu_count</I>)<BR>
+- Number of CPU Max ( <I>config_cpu_count</I> X <I>cpu_pct_max</I> / 100 )<BR>
+- Number of CPU Used (Field <I>config_cpu_count_used</I>)<BR>
+<BR>
+
+<B>AIX VIOs</B><BR>
+You can display VIOs information. Select in the list one of the two following options :<BR>
+- VIO View for the selected Box<BR>
+- VIO View, All Boxes<BR>
+<BR>
+For each VIO, the programm will display 3 values :<BR>
+- Processor Count<BR>
+- Entitled Capacity<BR>
+- Number of Virtual Processors<BR>
+<BR>
+
+<B>Linux LPARs and Windows VM</B><BR>
+- Number of VM<BR>
+- % CPU Max (Field <I>vc.cpu_max</I>)<BR>
+<BR>
+
+<B>VMWare ESX</B><BR>
+- % CPU Max (Field <I>vc.cpu_max</I>)<BR>
+- % Box Busy (Field <I>box_percent_busy</I>)<BR>
+<BR>
+
+<B>VMWare Cluster</B><BR>
+- Number of ESX<BR>
+- % CPU Max (Field <I>clusterutil.cpu_pct</I>)<BR>
+- CPU Count (Field <I>clusterutil.cpu_physical_count</I>)<BR>
+</BLOCKQUOTE>
+</LI>
+</UL>
+<BR>
+
+<FONT COLOR=MAROON><B>Commands :</B></FONT><BR>
+<BR>
+
+<B>Button [Copy Table]</B><BR>
+Click on this button to copy the table on the Windows Clipboard. The program
+will ask you to select first the Field Separator.<BR>
+You will obtain the <A HREF=Ecran_Selsepar.htm>Field Separator</A> Window. You can then
+paste the table on another program using [Cntrl+V] shortcut.<BR>
+<BR>
+
+<B>Button [Copy Graph]</B><BR>
+Click on this button to copy the graph on the Windows Clipboard. You will obtain
+<A HREF=Ecran_Seltaille.htm>Graphic Size Selection</A>.<BR>
+Then you can paste the graph on another program using [Cntrl+V] shortcut.<BR>
+<BR>
+
+<B>Button [View HTML]</B><BR>
+Click on this button to generate a page on HTML format containing the Table and the Graph.
+The page will be displayed using the selected HTML Browser.<BR>
+<BR>
+
+<B>Graphic Commands</B><BR>
+These are the <A HREF=Comgraph.htm>Graphic Commands</A>.<BR>
+<BR>
+
+<B>Button [Quit]</B><BR>
+Click on this button to return to the Main Menu.<BR>
+<BR>
+<BR>
+
+</BODY>
+</HTML>
+

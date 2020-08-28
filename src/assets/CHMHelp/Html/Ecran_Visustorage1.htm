@@ -1,0 +1,166 @@
+<HTML>
+<HEAD>
+<META CHARSET="ISO-8859-1">
+<TITLE>Storage Reports</TITLE>
+</HEAD>
+
+<BODY BGCOLOR=WHITE>
+
+<FONT FACE=Verdana>
+<FONT SIZE=3 COLOR=NAVY>Storage Reports<FONT SIZE=2 COLOR=BLACK>
+<HR><BR>
+
+<B>Information :</B><BR>
+<BR>
+In SACR the "Storage Reports" function displays data for BROD, SOD and SAN, for the French customers
+who use the shared infrastructure and some customers who have a dedicated infrastructure.<BR>
+The data comes from different data sources (GBRS, SOD, ..), and is concatenated once a day on the SACR server.<BR>
+When you use SACR the concatenated data is downloaded from the SACR server and stored locally on your workstation.<BR>
+The same day, if you use SACR again the data is retrieved from your workstation, except if you force the download again.<BR>
+At the beginning of a month, the BROD Occupancy data of the previous month is available only on the 2nd day,
+because the TSM batch jobs that produce the data last several days, and the BROD Transferred data
+is available only on the 5th day.<BR>
+<BR>
+<HR>
+<BR>
+
+This window displays Reports for the following Storage Domains :<BR>
+<UL>
+<LI>SOD Reports</LI>
+<LI>BROD Occupancy Reports</LI>
+<LI>BROD Transferred Reports</LI>
+<LI>VM Occupancy Reports</LI>
+<LI>VM Transferred Reports</LI>
+<LI>SAN Reports (Ports Count)</LI>
+<LI>DSU Reports</LI>
+</UL>
+<BR>
+
+By default the program selects all the Customers defined for the selected Storage Domain.
+But you can select a specific Storage Customer using the selection list in the top of the window.<BR>
+<BR>
+
+<FONT COLOR=MAROON><B>Commands :</B></FONT><BR>
+<BR>
+
+<B>Month Selection</B><BR>
+You can select with this list months to be displayed. You can use also the following buttons :<BR>
+<BR>
+- [Highlighted]<BR>
+- [Last 3 Months]<BR>
+- [Last 6 Months]<BR>
+- [Last 9 Months]<BR>
+- [All the Months]<BR>
+<BR>
+
+<B>Display / Infra / Metric</B><BR>
+You can select the Data to be displayed on the graphic. The contents of this list depends of the Storage
+Report (SOD, BROD, VM or SAN).<BR>
+<BR>
+
+<B>[ ? ]</B><BR>
+Click on this button to get more information concerning the items to be displayed.<BR>
+<A HREF=Storage_SOD.htm>For the SOD Reports</A><BR>
+<A HREF=Storage_BROD.htm>For the BROD Reports</A><BR>
+<BR>
+<BR>
+
+<IMG SRC=../Images/Coche.gif BORDER=0> <B>Split Type</B><BR>
+For BROD Occupancy Reports, you can display measures splitted in 6 columns :<BR>
+<BR>
+- Avg ONSITE<BR>
+- Avg OFFSITE<BR>
+- Avg EVAULT<BR>
+- Max ONSITE<BR>
+- Max OFFSITE<BR>
+- Max EVAULT<BR>
+<BR>
+
+<IMG SRC=../Images/Coche.gif BORDER=0> <B>Details by BROD Customer</B><BR>
+For BROD Transferred Reports, you can display the sum on the values for all the BROD Customers
+or display values for each Customer.<BR>
+<BR>
+
+<IMG SRC=../Images/Coche.gif BORDER=0> <B>Values in TB</B><BR>
+Select this option to display values in TB (Terabytes).<BR>
+<BR>
+
+<IMG SRC=../Images/Coche.gif BORDER=0> <B>Daily Values</B><BR>
+For BROD Transferred and VM Transferred reports you can display daily values selecting this option.<BR>
+<BR>
+
+<IMG SRC=../Images/Coche.gif BORDER=0> <B>Average Values</B><BR>
+For VM Occupancy reports you can display Monthly Average Values or Monthly Sums selecting this option.<BR>
+<BR>
+
+<IMG SRC=../Images/Coche.gif BORDER=0> <B>Stacked Bars</B><BR>
+Select this option to display Stacked Bars on the graph. Bars are displayed one in front
+the other instead of one beside the other.<BR>
+<BR>
+
+<IMG SRC=../Images/Coche.gif BORDER=0> <B>Show Forecast</B><BR>
+Select this option to display Forecast Values.<BR>
+<BR>
+
+<B>Forecast Months</B><BR>
+You can select with this list the number of Forecast months to be displayed on the graph.<BR>
+<BR>
+
+<B>Button [Columns Selection]</B><BR>
+You can display or hide every column of the table.<BR>
+Click on this button the select the columns to be displayed.<BR>
+<BR>
+
+<B>Button [Reload Data]</B><BR>
+Click on this button to reload Storage Data from SACR Server.<BR>
+<BR>
+
+<B>Button [List of Nodes]</B><BR>
+For BROD Reports, click on this button to display the list of Nodes.<BR>
+You will obtain the <A HREF=Ecran_Visustorage3.htm>List of Nodes</A> window.<BR>
+<BR>
+
+<B>Button [List of LUNID]</B><BR>
+For SOD Reports, click on this button to display the list of LUNIDs.<BR>
+You will obtain the <A HREF=Ecran_Visustorage3.htm>List of LUNIDs</A> window.<BR>
+<BR>
+
+<B>Button [Copy Table]</B><BR>
+Click on this button to copy the table on the Windows Clipboard. The program
+will ask you to select first the Field Separator.<BR>
+You will obtain the <A HREF=Ecran_Selsepar.htm>Field Separator</A> Window. You can then
+paste the table on another program using [Cntrl+V] shortcut.<BR>
+<BR>
+
+<B>Button [Copy Graph]</B><BR>
+Click on this button to copy the graph on the Windows Clipboard. You will obtain
+the <A HREF=Ecran_Seltaille.htm>Graphic Size Selection</A> window.<BR>
+Then you can paste the graph on another program using [Cntrl+V] shortcut.<BR>
+<BR>
+
+<B>Button [View HTML]</B><BR>
+Click on this button to generate a page on HTML format. You can select items to be displayed.<BR>
+The page will be displayed using the selected HTML Browser.<BR>
+<BR>
+
+<B>Button [Export to CSV]</B><BR>
+Click on this button to export data to a CSV File.<BR>
+<BR>
+
+<B>Button [Provisioning]</B><BR>
+For SOD Reports, you can define Provisioning values with this button.<BR>
+You will obtain the <A HREF=Ecran_Visustorage2.htm>SOD Provisioning</A> window.<BR>
+<BR>
+
+<B>Button [Quit]</B><BR>
+Click on this button to return to the previous screen.<BR>
+<BR>
+
+<B>Graphic Commands</B><BR>
+These are the <A HREF=Comgraph.htm>Graphic Commands</A>.<BR>
+<BR>
+<BR>
+
+</BODY>
+</HTML>
+

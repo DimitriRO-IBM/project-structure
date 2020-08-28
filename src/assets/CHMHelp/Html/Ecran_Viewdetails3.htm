@@ -1,0 +1,91 @@
+<HTML>
+<HEAD>
+<META CHARSET="ISO-8859-1">
+<TITLE>View Details</TITLE>
+</HEAD>
+
+<BODY BGCOLOR=WHITE>
+
+<FONT FACE=Verdana>
+<FONT SIZE=3 COLOR=NAVY>Forecast View<FONT SIZE=2 COLOR=BLACK>
+<HR><BR>
+
+This window displays Forecast Values for CPU, Memory and Disk Metrics for the selected Server.<BR>
+The top of the window gives general information :<BR>
+<BR>
+- The Month to be displayed<BR>
+- The Customer Name<BR>
+- The Server Name<BR>
+- The Type ("Server" or "LPAR")<BR>
+- The corresponding CPU Thresholds<BR>
+<BR>
+
+<FONT COLOR=MAROON><B>View Selection</B></FONT><BR>
+<UL>
+<LI>Select the Forecast Algorithm to be used :<BR>
+<BR>
+<B>Linear Regression</B><BR>
+<BR>
+This is the most simply method. The formula used to calculate the Linear Coefficients
+"a" and "b" are the following one :<BR>
+<BR>
+<IMG SRC=../Images/DroiteMC.bmp BORDER=0><BR>
+<BR>
+With this method all the points have the same importance.<BR>
+<BR>
+
+<B>Double Exponential Smoothing (Holt)</B><BR>
+<BR>
+This method is more complex, but allows to calculate forecast values with predictions
+based with priority on the last points. The Exponential Smoothing "fits" the curve
+obtained with previous values :<BR>
+<BR>
+<IMG SRC=../Images/LissageExpo.bmp BORDER=0><BR>
+<BR></LI>
+
+<LI>Select the number of "Last Months" to be selected<BR><BR></LI>
+
+<LI>Select the number of Months to Forecats (3 to 6)</LI>
+</UL>
+<BR>
+
+<FONT COLOR=MAROON><B>Commands :</B></FONT><BR>
+<BR>
+
+<B>Button [Display URL]</B><BR>
+Click on this button to show SOAP URL in a single line.<BR>
+<BR>
+
+<B>Button [Test SOAP Query]</B><BR>
+Click on this button to launch the SOAP Query in the Web Browser.<BR>
+<BR>
+
+<B>Button [Copy Table]</B><BR>
+Click on this button to copy the table on the Windows Clipboard. The program
+will ask you to select first the Field Separator.<BR>
+You will obtain the <A HREF=Ecran_Selsepar.htm>Field Separator</A> Window. You can then
+paste the table on another program using [Cntrl+V] shortcut.<BR>
+<BR>
+
+<B>Button [Copy Graph]</B><BR>
+Click on this button to copy the graph of the selected Tab on the Windows Clipboard.
+You will obtain the <A HREF=Ecran_Seltaille.htm>Graphic Size Selection</A> window.<BR>
+Then you can paste the graph on another program using [Cntrl+V] shortcut.<BR>
+<BR>
+
+<B>Button [View HTML]</B><BR>
+Click on this button to generate a page on HTML format containing Tables for the
+Daily View and the Hourly View. The page will be displayed using the selected HTML Browser.<BR>
+<BR>
+
+<B>Button [Quit]</B><BR>
+Click on this button to return to the previous screen.<BR>
+<BR>
+
+<B>Graphic Commands</B><BR>
+These are the <A HREF=Comgraph.htm>Graphic Commands</A>.<BR>
+<BR>
+
+</BODY>
+</HTML>
+

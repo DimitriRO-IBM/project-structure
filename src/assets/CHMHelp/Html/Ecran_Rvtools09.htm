@@ -1,0 +1,202 @@
+<HTML>
+<HEAD>
+<META CHARSET="ISO-8859-1">
+<TITLE>RVTools - Disaster Recovery Plan (DRP) Simulation</TITLE>
+</HEAD>
+
+<BODY BGCOLOR=WHITE>
+
+<FONT FACE=Verdana>
+<FONT SIZE=3 COLOR=NAVY>RVTools - Disaster Recovery Plan (DRP) Simulation<FONT SIZE=2 COLOR=BLACK>
+<HR><BR>
+
+<FONT COLOR=MAROON><B>Customer Selection</B></FONT><BR>
+<BR>
+The top of the window allows you to select the 3 following parameters :<BR>
+<UL>
+<LI>The Customer Name</LI>
+<LI>The VCenter Name</LI>
+<LI>The Date</LI>
+</UL>
+
+<IMG SRC=../Images/Rvtools1.bmp BORDER=0><BR>
+<BR>
+Each time you select a new Customer, SACR will update automatically the "VCenter" list and the "Date" list.<BR>
+You have to click on the <B>[Ok]</B> button to reload new data.<BR>
+<BR>
+<B>Button [...]</B><BR>
+If the VCenter list contains more than 2 VCenters, you will be able to do a "Custom Selection" using this button.<BR>
+<BR>
+<B>Button [?]</B><BR>
+This button is used to display the current Custom VCenter Selection.<BR>
+<BR>
+
+<B>Scenario Selection</B><BR>
+The program offers the possibility to define 3 different Disaster Recovery Scenarios.<BR>
+Select here the Scenario you want to use :<BR>
+<UL>
+<LI>Scenario 1</LI>
+<LI>Scenario 2</LI>
+<LI>Scenario 3</LI>
+</UL>
+
+<B>Buttons [Previous Step] and [Next Step]</B><BR>
+The DRP Simulation is done in 3 steps. Use these buttons to move to the next step or return
+to the previous one.<BR>
+<BR>
+<BR>
+
+<FONT COLOR=MAROON><B>Step 1 - Pairing Clusters</B></FONT><BR>
+<BR>
+<B>Button [Pairing]</B><BR>
+You have to define, for each Protected Cluster, the Recovery Cluster wich is going to be used for the
+Disaster Recovery Plan (DRP) Simulation.<BR>
+Select first the Protected Cluster on the left list, then select the Recovery Cluster on the right list,
+and click the button <B>[Pairing]</B> to create the Recovery Cluster Association.<BR>
+You can also filter Clusters by ESX Sites if you want.<BR>
+<BR>
+The left list will display, for each Protected Cluster, the Associated Recovery Cluster in this way :<BR>
+Protected Cluster --> Recovery Cluster<BR>
+<BR>
+<B>Button [Clear Pairing]</B><BR>
+You can delete a Cluster Pairing using this button. A confirmation message will ask you to confirm this action.<BR>
+<BR>
+Double-click on a line to see more Cluster Details.<BR>
+<BR>
+<B>Note :</B><BR>
+You have to select the same Date for Multiple VCenter DRP.<BR>
+<BR>
+
+<B>Selection of Clusters to be Protected</B><BR>
+You have to select (check / uncheck) in this list the Clusters to be Protected during the Disaster Recovery Scenario
+you select in the top of the window.<BR>
+Selections are automatically saved.<BR>
+<BR><BR>
+
+<FONT COLOR=MAROON><B>Step 2 - VM Selection</B></FONT><BR>
+<BR>
+In this step you will select VMs to be protected in a more precise way.<BR>
+You can select VMs using these two lists :<BR>
+<UL>
+<LI>List 1 : Selection of VMs by Datastore</LI>
+<LI>List 2 : Selection of VMs ON one by one</LI>
+</UL>
+
+Just check / uncheck VMs to be added from the Protected Clusters to the Recovery Clusters.<BR>
+If you check / uncheck a Datastore, all VMs of this Datastore will be checked / unchecked.<BR>
+<BR>
+<B>Button [Select All VMs]</B><BR>
+Click on this button to select all VMS to be added from the Protected Clusters to the Recovery Clusters.<BR>
+Selections are automatically saved.<BR>
+<BR><BR>
+
+<FONT COLOR=MAROON><B>Step 3 - Disaster Recovery Plan Simulation</B></FONT><BR>
+<BR>
+The window displays 2 tables containing data of the selected Recovery Clusters.<BR>
+For each Recovery Cluster, tables give these information :<BR>
+<BR>
+
+<TABLE BORDER=0>
+<TR>
+<TD VALIGN=TOP><FONT FACE=Verdana SIZE=2>
+<B>Table 1</B><BR>	
+01 : ESX Count<BR>
+02 : Number of VM ON Before DRP<BR>
+03 : Number of Real Cores<BR>
+04 : Total Virtual CPU (vCPU) Before DRP<BR>
+05 : Effective Memory (GB)<BR>
+06 : Total vRAM (in GB) Before DRP<BR>
+07 : Number of VM ON After DRP<BR>
+08 : Total Virtual CPU (vCPU) After DRP<BR>
+09 : Total vRAM (in GB) After DRP<BR>
+<BR>
+<B>Table 2</B><BR>
+09 : Average vCPU Slot<BR>
+10 : Average vRAM Slot<BR>
+11 : Available Slots<BR>
+12 : Selection Column [•]<BR>
+13 : DRP Ratio 1 : vCPU / Cores<BR>
+14 : DRP Ratio 1 : Applied Value<BR>
+15 : DRP Ratio 2 : vRAM / Effective Mem<BR>
+16 : DRP Ratio 2 : Applied Value<BR>
+</TD>
+
+<TD>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</TD>
+
+<TD VALIGN=TOP><FONT FACE=Verdana SIZE=2>
+<BR><BR><BR><BR>
+Sum of the Number of VMs CPUs Before DRP<BR>
+<BR>
+Sum of the Memory of VMs<BR>
+<BR>
+Sum of the Number of VMs CPUs After DRP<BR>
+Sum of the Memory of VMs After DRP<BR>
+<BR><BR>
+Col08 / Col07<BR>
+Col09 / Col07<BR>
+See calculation below<BR>
+<BR>
+Col08 / Col03<BR><BR>
+Col09 / Col05<BR><BR>
+</TD>
+</TR>
+</TABLE>
+<BR>
+
+<B>Available Slots Calculation :</B><BR>
+Available CPU = (Col14 x Col03) - Col08<BR>
+R1 = Available CPU / Col09<BR>
+<BR>
+Available RAM = (Col16 x Col05) - Col09<BR>
+R2 = Available RAM / Col10<BR>
+<BR>
+Available Slots = Minima (R1, R2)<BR>
+<BR>
+<B>Tip :</B><BR>
+Click with the right button of the mouse on a cell to display Formula.
+<BR>
+<BR>
+
+<FONT COLOR=MAROON><B>Commands :</B></FONT><BR>
+<BR>
+
+<B>Button [Copy Tables]</B><BR>
+Click on this button to copy the displayed tables on the Windows Clipboard. The program
+will ask you to select first the Field Separator.<BR>
+You will obtain the <A HREF=Ecran_Selsepar.htm>Field Separator</A> Window. You can then
+paste the table on another program using [Cntrl+V] shortcut.<BR>
+<BR>
+
+<B>Cluster Selection</B><BR>
+You can select a Cluster in the table 2 using one of these methods :<BR>
+<UL>
+<LI>Click on the column [•]</LI>
+<LI>Press the [Space] bar</LI>
+</UL>
+<BR>
+
+<B>Button [Select All]</B><BR>
+Use this button to select all the Clusters in the table.<BR>
+<BR>
+
+<B>Button [Deselect All]</B><BR>
+Use this button to deselect all the Clusters in the table.<BR>
+<BR>
+
+<B>Button [Update Applied Ratios]</B><BR>
+Click on this button to define your Personnal DRP Ratios 1 and 2.<BR>
+You will obtain : <A HREF=Ecran_Rvtratios.htm>CPU and Memory Applied Ratios</A>.<BR>
+<BR>
+
+<B>Button [View HTML]</B><BR>
+Click on this button to generate a page on HTML format containing the list of Items.
+The page will be displayed using the selected HTML Browser.<BR>
+<BR>
+
+<B>Button [Quit]</B><BR>
+Click on this button to return to the previous screen.<BR>
+<BR>
+
+</BODY>
+</HTML>
+

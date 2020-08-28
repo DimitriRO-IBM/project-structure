@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<META CHARSET="ISO-8859-1">
+<TITLE>Collect Quality Formulas</TITLE>
+</HEAD>
+
+<BODY BGCOLOR=WHITE>
+
+<FONT FACE=Verdana>
+<FONT SIZE=3 COLOR=NAVY>Collect Quality Formulas<FONT SIZE=2 COLOR=BLACK>
+<HR><BR>
+<BR>
+
+<B>Daily Calculation</B><BR>
+<BR>
+This is the Formula used to calculate the Daily Collect Quality Percentage :<BR>
+<BR>
+<FONT COLOR=BLUE>
+pct_collected_per_server = (Number of collected per datatype / Number of expected per datatype) * 100<BR>
+</FONT>
+<BR>
+Example :<BR>
+On SRM, a server have 5 datatypes. SRM collected 3 datatypes:<BR>
+<BR>
+%Collected = (3 datatypes Ok / 5 datatypes expected) * 100 = 60% for this day<BR>
+<BR><BR>
+
+<B>Monthly Calculation</B><BR>
+<BR>
+This is the Formula used to calculate the Monthly Collect Quality Percentage :<BR>
+<BR>
+<FONT COLOR=BLUE>
+pct_collected_per_server = (Number of collected per datatype * Number of days collected of that month) / (Number of expected per datatype * total Number of days of the month) * 100<BR>
+</FONT>
+<BR>
+Example :<BR>
+On SRM, a server have 5 datatypes. SRM collected 3 datatypes Ok during 24 days and 4 datatype Ok during 6 days :<BR>
+<BR>
+%Collected = [(3 datatypes ok * 24 jours) + (4 datatypes ok * 6 jours)] / (5 datatypes expected * 30 days) * 100 = 64% for the whole month<BR>
+<BR><BR>
+
+<B>SRM Information</B><BR>
+You can see all Collected Quality Details using this SRM page :<BR>
+On a Server Level, select "Server Report / Collection Status / Collection Errors".<BR>
+<BR><BR>
+
+</BODY>
+</HTML>
+

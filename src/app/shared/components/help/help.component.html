@@ -1,3 +1,12 @@
 <button mat-icon-button color="primary" (click)="onHelpButtonClick()">
   <mat-icon>help</mat-icon>
 </button>
+
+
+<div class="help-modal" *ngIf="displayHtml">
+  <div class="backdrop" (click)="displayHtml = false;"></div>
+  <div class="content">
+    <div class="close"></div>
+    <div class="innerContent" [innerHTML]="htmlContent"></div>
+  </div>
+</div>

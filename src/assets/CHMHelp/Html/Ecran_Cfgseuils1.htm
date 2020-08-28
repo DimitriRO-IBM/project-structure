@@ -1,0 +1,156 @@
+<HTML>
+<HEAD>
+<META CHARSET="ISO-8859-1">
+<TITLE>Default Thresholds for Metrics</TITLE>
+</HEAD>
+
+<BODY BGCOLOR=WHITE>
+
+<FONT FACE=Verdana>
+<FONT SIZE=3 COLOR=NAVY>Default Thresholds for Metrics<FONT SIZE=2 COLOR=BLACK>
+<HR><BR>
+
+Select first the OS :<BR>
+<UL>
+<LI>Aix / Linux</LI>
+<LI>Windows</LI>
+<LI>VMWare</LI>
+</UL>
+<BR>
+	
+<FONT COLOR=NAVY SIZE=3>1 - Aix and Linux Thresholds</FONT><BR>
+<BR>
+This window is designed to input Aix / Linux Default Thresholds Values as following :<BR>
+<BR>
+<IMG SRC=../Images/Cfg_seuils_Aix.bmp BORDER=0><BR>
+<BR>
+
+<BR><FONT COLOR=MARROON><B>1 - Highest Values</B></FONT><BR>
+<BR>
+<B>CPU</B><BR>
+<BR>
+Thresholds are defined by 4 values :<BR>
+<UL>
+<LI>Lower Server CPU Usage (%)</LI>
+<LI>Upper Server CPU Usage (%)</LI>
+<LI>Lower LPAR CPU Usage (% Entitled Capacity)</LI>
+<LI>Upper LPAR CPU Usage (% Virtual Processor Count)</LI>
+</UL>
+
+<B>Memory</B><BR>
+<BR>
+Thresholds are defined by 8 values :<BR>
+<UL>
+<LI>AIX : Lower Memory Swap Usage (%)</LI>
+<LI>AIX : Upper Memory Swap Usage (%)</LI>
+<LI>LINUX : Lower Memory Usage (%)</LI>
+<LI>LINUX : Upper Memory Usage (%)</LI>
+<LI>Lower Page Ins</LI>
+<LI>Upper Page Ins</LI>
+<LI>Lower Page Out</LI>
+<LI>Upper Page Out</LI>
+</UL>
+
+<B>Disk</B><BR>
+<BR>
+Thresholds are defined by 2 values :<BR>
+<UL>
+<LI>Free Size (Mb)</LI>
+<LI>Disk Used (%)</LI>
+</UL>
+<BR>
+
+<BR><FONT COLOR=MARROON><B>2 - Lowest Values</B></FONT><BR>
+<BR>
+<B>CPU</B><BR>
+<BR>
+<UL>
+<LI>Up To Server CPU Usage (%)</LI>
+<LI>Up To LPAR CPU Usage (%)</LI>
+</UL>
+
+<B>Memory</B><BR>
+<BR>
+<UL>
+<LI>Up To Used Melory (%)</LI>
+</UL>
+<BR>
+
+<BR><FONT COLOR=MARROON><B>3 - Measurement and Status Selection</B></FONT><BR>
+<BR>
+The following tables give the SRM Metrics used to select the Measurements and the Status
+(Smileys), for AIX and LINUX.<BR>
+<BR>
+
+<B>1 - CPU</B><BR>
+<BR>
+<IMG SRC=../Images/Mesures_CPU.bmp BORDER=0><BR>
+<BR>
+
+<B>CPU LPAR</B><BR>
+This picture shows LPAR metrics :<BR>
+<BR>
+<IMG SRC=../Images/CPU-LPAR.bmp BORDER=0><BR>
+<BR>
+
+<B>2 - Memory</B><BR>
+<BR>
+<IMG SRC=../Images/Mesures_Memory.bmp BORDER=0><BR>
+<BR>
+
+<B>3 - Disk Usage</B><BR>
+<BR>
+<IMG SRC=../Images/Mesures_Disk.bmp BORDER=0><BR>
+<BR>
+<BR>
+
+<FONT COLOR=NAVY SIZE=3>2 - Solaris, HP-UX Thresholds</FONT><BR>
+<BR>
+This window is designed to input Solaris, HP-UX Default Thresholds Values as following :<BR>
+<BR>
+<IMG SRC=../Images/Cfg_seuils_Solaris.bmp BORDER=0><BR>
+<BR><BR>
+<B>Memory Status Selection :</B><BR>
+<BR>
+If the Memory used % is > <B>90 %</B> then :<BR>
+<BLOCKQUOTE>
+<TABLE BORDER=0 CELLSPACING=5 CELLPADDING=8>
+<TR>
+<TD BGCOLOR=RED><FONT FACE=Verdana SIZE=2 COLOR=WHITE>
+Scan Rate >= 300</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR=YELLOW><FONT FACE=Verdana SIZE=2>
+Scan Rate >= 150 and Scan Rate < 300</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR=LIGHTGREEN><FONT FACE=Verdana SIZE=2>
+Scan Rate < 150</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<BR><BR>
+
+
+<FONT COLOR=NAVY SIZE=3>3 - Windows Thresholds</FONT><BR>
+<BR>
+This window is designed to input Windows Default Thresholds Values as following :<BR>
+<BR>
+<IMG SRC=../Images/Cfg_seuils_Win.bmp BORDER=0><BR>
+<BR><BR>
+
+<FONT COLOR=NAVY SIZE=3>4 - VMWare Thresholds</FONT><BR>
+<BR>
+This window is designed to input VMWare Default Thresholds Values as following :<BR>
+<BR>
+<IMG SRC=../Images/Cfg_seuils_VMWare.bmp BORDER=0><BR>
+<BR><BR>
+<B>Button [Restore Initial Values]</B><BR>
+Click on this button to set Thresholds with program defined values.<BR>
+
+<BR><BR>
+</BODY>
+</HTML>
+

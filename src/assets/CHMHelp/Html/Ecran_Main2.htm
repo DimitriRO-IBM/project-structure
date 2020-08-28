@@ -1,0 +1,474 @@
+<HTML>
+<HEAD>
+<META CHARSET="ISO-8859-1">
+<TITLE>Main Window</TITLE>
+</HEAD>
+
+<BODY BGCOLOR=WHITE>
+
+<FONT FACE=Verdana>
+<FONT SIZE=3 COLOR=NAVY>Main Window<FONT SIZE=2 COLOR=BLACK>
+<HR><BR>
+
+<FONT COLOR=NAVY SIZE=3>1 - Menu Bar</FONT><BR>
+<BR>
+<IMG SRC=../Images/Main1.bmp BORDER=0><BR>
+<BR>
+These are the main commands :<BR>
+<UL>
+<LI><B>File</B>
+	<UL>
+	<LI><A HREF=Ecran_Cfgdata.htm>Manage Data Files</A></LI>
+	<LI><A HREF=Ecran_Viewreports.htm>View Reports</A></LI>
+	<LI>Test SFTP File Transfert</LI>
+	<LI><A HREF=Ecran_Calend.htm>Calendar</A></LI>
+	<LI>Quit the program</LI>
+	</UL><BR></LI>
+
+<LI><B>Setup</B>
+	<UL>
+	<LI><A HREF=Ecran_Cfgcust.htm>List of Customers</A></LI>
+	<LI><A HREF=Ecran_Cfgseuils1.htm>Thresholds for Metrics</A></LI>
+	<LI><A HREF=Ecran_Cfgseuils2.htm>Thresholds for VG, LU and FS</A></LI>
+	<LI><A HREF=Ecran_Cfgseuils3.htm>Thresholds for Oracle</A></LI>
+	<LI><A HREF=Ecran_Cfgoptions.htm>Options</A></LI>
+	<LI><A HREF=Ecran_Cfgfond.htm>Screen Colors</A></LI>
+	<LI><A HREF=Ecran_Confgra.htm>Graphics</A></LI>
+	<LI><A HREF=Ecran_Cfgtimeout.htm>Internet Time-Out</A></LI>
+	<LI><A HREF=Ecran_Cfglogin.htm>User Login</A></LI>
+	</UL><BR></LI>
+
+<LI><B>SRM</B>
+	<UL>
+	<LI>SRM Portal</LI>
+	<LI>Contact SRM</LI>
+	</UL><BR></LI>
+	
+<LI><B>Help</B>
+	<UL>
+	<LI><A HREF=Ecran_Telemaj.htm>Download the Last Version</A></LI>
+	</UL><BR></LI>
+</UL>
+
+<BR>
+<FONT COLOR=NAVY SIZE=3>2 - Import Parameters</FONT><BR>
+<BR>
+
+Select in this panel the following input parameters :<BR>
+<UL>
+<LI>The Enterprise and the Customer</LI>
+<LI>The Month</LI>
+<LI>The OS (Operating System)</LI>
+<LI>The Shift</LI>
+</UL>
+<BR>
+<IMG SRC=../Images/Main2.bmp BORDER=0><BR>
+<BR><BR>
+
+<B>Button <IMG SRC=../Images/b_expand1.bmp BORDER=0></B><BR>
+Click this button to close all the folders in the Customers list.<BR>
+<BR>
+
+<B>Button <IMG SRC=../Images/b_expand2.bmp BORDER=0></B><BR>
+Click this button to open and display the content of all the folders in the Customers list.<BR>
+<BR>
+
+<TABLE>
+<TR>
+<TD VALIGN=TOP><IMG SRC=../Images/Main6.bmp BORDER=0></TD>
+<TD><FONT FACE=Verdana SIZE=2>
+Use this buttons to :<BR>
+<UL>
+<LI>Display information of the selected Customer</LI>
+<LI>Search for a Customer</LI>
+</UL></TD>
+</TR>
+</TABLE>
+
+<B>Restricted Customers</B><BR>
+<BR>
+Restricted Customers are displayed with a bullet after the name.<BR>
+Sample : Boulanger (•)<BR>
+<BR>
+<BR>
+
+<B>Button [SRM Global Inventory]</B><BR>
+Select this function to view the <A HREF=Ecran_Visuglobal1.htm>Global Inventory</A> Report.<BR>
+<BR>
+
+<B>Button [List]</B><BR>
+Select this function to view the <A HREF=Ecran_Visunoncoll1.htm>Non Collected Days</A> Report.<BR>
+<BR>
+
+<B>Button [History]</B><BR>
+Select this function to view the <A HREF=Ecran_Visunoncoll2.htm>Non Collected Assets by Days</A> Report.<BR>
+<BR>
+
+<B>Button [Load Multiple OS]</B><BR>
+You can load data from SRM for one or more Operating System in a single step.<BR>
+Click on this button to select the Operating System to be loaded :<BR>
+<BR>
+<IMG SRC=../Images/Main7.bmp BORDER=0><BR>
+<BR>
+
+<B>Button [zOS]</B><BR>
+This OS is not populated by SRM. When you select this OS, you will obtain the
+<A HREF=Ecran_Main3.htm>Maiframe Window</A>.<BR>
+<BR>
+
+<TD><FONT FACE=Verdana SIZE=2>
+You can directly select the Month and<BR>
+the OS by clicking on these list.
+</TD>
+<TR>
+</TABLE>
+<BR><BR>
+
+<B>Data Source Selection</B><BR>
+You can select 3 Data Sources :<BR>
+<UL>
+<LI>From a Local File saved on your computer<BR><BR></LI> 
+<LI>Download Data from the SACR Server<BR>
+<B>Note :</B><BR>
+For french customers, on the 3rd day of each month, all the data is extracted from SRM and<BR>
+stored on the SACR Server. This data can then be used as a "fast access" data source.<BR><BR></LI>
+
+<LI>Load Data using SRM SOAP Queries</LI>
+</UL>
+<BR>
+
+<B>Button [Import OS Data Metrics]</B><BR>
+Click this button to import data for the selected Customer, Month and OS.<BR>
+If you already have import data, the program will load data from a file on your computer.<BR>
+By default, files are located on this directory :<BR>
+<BR>
+C:\Capacity Reporting\Data<BR>
+<BR>
+
+<B>Button [Loaded]</B><BR>
+This button displays a list containing all the months and all the OS that have been loaded
+for the selected Customer :<BR>
+<BR>
+<IMG SRC=../Images/Main4.bmp BORDER=0><BR>
+<BR>
+
+<B>Button [Sub Client IDs]</B><BR>
+Click on this button to display and select the Sub Client ID1s and Client ID2s you want to process.<BR>
+<BR>
+
+<B>Button [Profiles ...]</B><BR>
+Click on this button to select or define a Customer Profile for the selected Customer.
+You will obtain the <A HREF=Ecran_Profils.htm>Profile Selection</A> window.<BR> 
+<BR>
+
+<B>Button [Operating System Metrics]</B><BR>
+Click on this button to select the Metrics Reports :<BR>
+<BR>
+<IMG SRC=../Images/Main3.bmp BORDER=0><BR>
+<BR>
+<BLOCKQUOTE>
+<B>Display List</B><BR>
+Select the type of Report :<BR>
+- All Servers<BR>
+- Top 10<BR>
+- Top 20<BR>
+- Top 50<BR>
+- Top 2%<BR>
+- Top 5%<BR>
+- Top 10%<BR>
+- Top 15%<BR>
+- Top 20%<BR>
+<BR>
+
+<IMG SRC=../Images/Coche.gif BORDER=0> <B>Display Sub Client ID 1</B><BR>
+Select this option to display in the Reports the column [Subclient ID1].<BR>
+<BR>
+
+<IMG SRC=../Images/Coche.gif BORDER=0> <B>Display Sub Client ID 2</B><BR>
+Select this option to display in the Reports the column [Subclient ID2].<BR>
+<BR><BR>
+
+<B>Button [Infrastructure View]</B><BR>
+Select this function to view the <A HREF=Ecran_Servercount.htm>Infrastructure View</A> Reports.<BR>
+<BR>
+
+<B>Button [List of Servers]</B><BR>
+Select this function to view the <A HREF=Ecran_Visulist.htm>List of Servers</A> Report.<BR>
+<BR>
+
+<B>Button [Configuration]</B><BR>
+Select this function to view the <A HREF=Ecran_Visuconfig.htm>Servers Configuration Updates</A> Report.<BR>
+<BR>
+
+<B>Button [Box Consumption]</B><BR>
+Select this function to view the <A HREF=Ecran_Servercount.htm>Boxes Consumption View</A> Reports.<BR>
+<BR>
+
+<B>Button [Shared Pool View]</B><BR>
+Select this function to view the <A HREF=Ecran_Visushapool1.htm>Shared Pool View</A> Reports.<BR>
+<BR>
+
+<B>Button [ESX - VM Details]</B><BR>
+Select this function to view the <A HREF=Ecran_Visuesx1.htm>ESX Monthly VM Details</A> Reports.<BR>
+<BR>
+
+<B>Button [Clusters View]</B><BR>
+Select this function to view the <A HREF=Ecran_Visuesx3.htm>Clusters View</A> Report.<BR>
+<BR>
+
+<B>Button [CPU View]</B><BR>
+Select this function to view the <A HREF=Ecran_Visumetric.htm>CPU Report</A>.<BR>
+<BR>
+
+<B>Button [Memory View]</B><BR>
+Select this function to view the <A HREF=Ecran_Visumetric.htm>Memory Report</A>.<BR>
+<BR>
+
+<B>Button [Disk View]</B><BR>
+Select this function to view the <A HREF=Ecran_Visumetric.htm>Disk Report</A>.<BR>
+<BR>
+
+<B>Button [Red Volume Groups]</B><BR>
+Select this function to view the <A HREF=Ecran_Visufullvg.htm>Red Volume Groups Report</A>.<BR>
+<BR>
+
+<B>Button [Red Filesystems]</B><BR>
+Select this function to view the <A HREF=Ecran_Visufullvg.htm>Red Filesystems</A>.<BR>
+<BR>
+
+<B>Button [OS Report]</B><BR>
+Click this button to create the <A HREF=Ecran_Selreport.htm>Operating Systeme Report</A>.<BR>
+<BR>
+
+<B>Button [Automatic Recommendations]</B><BR>
+Click this button to launch Automatic Recommendations functions.<BR>
+<BR>
+
+<B>Button [Export to CSV Files]</B><BR>
+Click this button to export SRM data to <A HREF=Ecran_Watson.htm> CSV Files</A>.<BR>
+<BR>
+</BLOCKQUOTE>	
+
+<B>Button [View Data Details]</B><BR>
+Click on this button to display the SRM data used to perform the reports.<BR>
+<BR>
+Data is displayed on 5 Tabs :<BR>
+<BR>
+<IMG SRC=../Images/Main5.bmp BORDER=0><BR>
+<BR>
+
+<UL>
+<LI>Last 12 Months<BR>
+	Display Options :<BR>
+	- Infrastructure View<BR>
+	- Boxes View<BR>
+	- Volume Groups<BR>
+    - Filesystems<BR><BR></LI>
+<LI>Month -4</LI>
+<LI>Month -3</LI>
+<LI>Month -2</LI>
+<LI>Month -1</LI>
+</UL>
+
+The first Tab "Last 12 Months" displays the Servers for the selected Customer for the 12 last months.
+The other Tabs display data for the previous months.<BR>
+<BR>
+<B>View Details</B><BR>
+You can obtain Metrics for a specific Server just by double-click on it (or pressing the <B>[Enter]</B> key).<BR>
+You will obtain the <A HREF=Ecran_Viewdetails1.htm>View Details</A> Window.<BR>
+<BR>
+
+<B>Button [Display SOAP]</B><BR>
+This button allows you to display the SRM SOAP Queries used to import data. Queries are
+dynamically set in function of selected Customer, Month, OS and Shift.
+You will obtain the <A HREF=Ecran_Visusoap.htm>SOAP Queries</A> window.<BR>
+<B>SOAP</B> : Simple Object Access Protocol<BR>
+<BR>
+
+<B>Button [SOAP Availability]</B><BR>
+Click on this button to check SRM SOAP availability. A simple SOAP Query will be used to check SOAP.<BR>
+<BR>
+
+<B>Button [Hide Data Details]</B><BR>
+Click on this button to hide Data Details.<BR>
+<BR>
+
+<B>Button [Copy]</B><BR>
+Click on this button to copy data from the selected Tab into the Windows Clipboard. The program will
+ask you to select first what you want to copy :<BR>
+- 1 : The Selected Line<BR>
+- 2 : All the Table<BR>
+<BR>
+If you want to copy the entire Table, the program will then ask you to select the Field Separator.
+You will obtain the <A HREF=Ecran_Selsepar.htm>Field Separator</A> Window.<BR>
+<BR>
+
+<B>Button [Show Empty] / [Hide Empty]</B><BR>
+By default, empty columns are hidden (columns without any data). Click on this button to display columns in all the tables.
+Then click on [Hide Empty] to hide again empty columns.<BR>
+<BR>
+
+<B>Button [Search and Select]</B><BR>
+This button opens a new Toolbar :<BR>
+<BR>
+<IMG SRC=../Images/Main8.bmp BORDER=0><BR>
+<BLOCKQUOTE>
+
+<B>Search a Server</B><BR>
+To search a Server name on the list, type the characters to be found and click the
+<IMG SRC=../Images/Loupe.bmp BORDER=0> button, or press the [Enter] key.<BR>
+If the criteria matches, the Server line will be highlighted.<BR>
+Use <B>[Previous]</B> and <B>[Next]</B> buttons to highlight the others Servers.<BR>
+<BR>
+
+<B>Button [Select All]</B><BR>
+Click on this button to select all the Servers on the list.<BR>
+<BR>
+
+<B>Button [Deselect All]</B><BR>
+Click on this button to deselect all the Servers on the list.<BR>
+<BR>
+
+<B>Selection of Servers</B><BR>
+You can save a specific Servers Selection if needed.<BR>
+<BR>
+<B>Button [Save Selection]</B><BR>
+Click on this button to save the list of the selected Servers on the table. You will be prompted to
+give the Name of the selection. This Selection will be added into the Selection List.<BR>
+<BR>
+
+<B>Button [Delete Selection]</B><BR>
+Click on this button to delete the Selection Name from the list.<BR>
+<BR>
+
+<B>Rename a Server</B><BR>
+You can rename a Server. Just type the new name on the input field an click on the
+[Rename] button.<BR
+<BR>
+</BLOCKQUOTE>
+<BR>
+
+<B>Button [Oracle Databases]</B><BR>
+Click on this button to select the following reports :
+<BLOCKQUOTE>
+<B>Button [Oracle DB Sizes]</B><BR>
+Select this function to view the <A HREF=Ecran_Visuoracle.htm>Oracle DB Sizes Report</A>.<BR>
+<BR>
+
+<B>Button [Oracle Tablespaces]</B><BR>
+Select this function to view the <A HREF=Ecran_Visuoratbs.htm>Oracle Tablespaces Report</A>.<BR>
+<BR>
+
+<B>Button [Oracle Datafiles]</B><BR>
+Select this function to view the <A HREF=Ecran_Visuoratbs.htm>Oracle Datafiles Report</A>.<BR>
+<BR>
+</BLOCKQUOTE>
+
+<B>Button [Storage Reports]</B><BR>
+Click on this button to select the following reports :<BR>
+<BLOCKQUOTE>
+<BR>
+<IMG SRC=../Images/MainStorage.bmp BORDER=0><BR>
+<BR>
+<B>Button [SOD Reports]</B><BR>
+Select this function to view the <A HREF=Ecran_Visustorage1.htm>SOD Reports</A>.<BR>
+<BR>
+
+<B>Button [BROD Occupancy]</B><BR>
+Select this function to view the <A HREF=Ecran_Visustorage1.htm>BROD Occupancy Reports</A>.<BR>
+<BR>
+
+<B>Button [BROD Transferred]</B><BR>
+Select this function to view the <A HREF=Ecran_Visustorage1.htm>BROD Transferred Reports</A>.<BR>
+<BR>
+
+<B>Button [VM Occupancy]</B><BR>
+Select this function to view the <A HREF=Ecran_Visustorage1.htm>VM Occupancy Reports</A>.<BR>
+<BR>
+
+<B>Button [VM Transferred]</B><BR>
+Select this function to view the <A HREF=Ecran_Visustorage1.htm>VM Transferred Reports</A>.<BR>
+<BR>
+
+<B>Button [SAN Reports]</B><BR>
+Select this function to view the <A HREF=Ecran_Visustorage1.htm>SAN Reports</A>.<BR>
+<BR>
+
+<B>Button [DSU Reports]</B><BR>
+Select this function to view the <A HREF=Ecran_Visustorage1.htm>DSU Reports</A>.<BR>
+<BR>
+</BLOCKQUOTE>
+
+<B>Button [RVTools Metrics]</B><BR>
+Click on this button to select the following RVTools reports :
+<BLOCKQUOTE>
+
+<B>Button [VCenter Inventory]</B><BR>
+Select this function to view the <A HREF=Ecran_Rvtools01.htm>VCenter Inventory</A> Reports.<BR>
+<BR>
+
+<B>Button [Allocated Resources]</B><BR>
+Select this function to view the <A HREF=Ecran_Rvtools05.htm>Allocated Resources</A> Reports.<BR>
+<BR>
+
+<B>Button [Disaster Recovery]</B><BR>
+Select this function to view the <A HREF=Ecran_Rvtools09.htm>Disaster Recovery Simulation</A> Reports.<BR>
+<BR>
+
+<B>Button [Disks and Partitions]</B><BR>
+Select this function to view the <A HREF=Ecran_Rvtools06.htm>Disks and Partitions</A> Reports.<BR>
+<BR>
+
+<B>Button [Ports and Switches]</B><BR>
+Select this function to view the <A HREF=Ecran_Rvtools07.htm>Ports and Switches</A> Reports.<BR>
+<BR>
+
+<B>Button [RVTools Database Maintenance]</B><BR>
+Select this function to view the <A HREF=Ecran_Rvtools08.htm>RVTools Database Maintenance</A>.<BR>
+<BR>
+
+<B>Button [RVTools / SRM Cross Checking]</B><BR>
+Select this function to view the <A HREF=Ecran_Rvtsrm.htm>RVTools / SRM Cross Checking</A> Reports.<BR>
+</BLOCKQUOTE>
+<BR>
+
+<B>Button [HMCScan Metrics]</B><BR>
+Click on this button to select the following HMCScan reports :
+<BLOCKQUOTE>
+
+<B>Button [HMC Inventory]</B><BR>
+Select this function to view the <A HREF=Ecran_Hmcscan01.htm>HMC Inventory</A> Reports.<BR>
+<BR>
+
+<B>Button [Allocated / Available Box Resources]</B><BR>
+Select this function to view the <A HREF=Ecran_Hmcscan05.htm>Allocated Resources</A> Reports.<BR>
+<BR>
+
+<B>Button [Shared Pool View]</B><BR>
+Select this function to view the <A HREF=Ecran_Hmcscan06.htm>Share Pool Names</A> Reports.<BR>
+<BR>
+
+<B>Button [VIO Disks]</B><BR>
+Select this function to view the <A HREF=Ecran_Hmcscan06.htm>VIO Disks</A> Reports.<BR>
+<BR>
+
+<B>Button [LPAR Distribution]</B><BR>
+Select this function to view the <A HREF=Ecran_Hmcscan08.htm>LPAR Distribution</A> Reports.<BR>
+<BR>
+<B>Button [HMCScan Database Maintenance]</B><BR>
+Select this function to view the <A HREF=Ecran_Hmcscan09.htm>HMCScan Database Maintenance</A>.<BR>
+<BR>
+
+<B>Button [HMCScan / SRM Cross Checking]</B><BR>
+Select this function to view the <A HREF=Ecran_Hmcsrm.htm>HMCScan / SRM Cross Checking</A> Reports.<BR>
+</BLOCKQUOTE>
+<BR>
+
+<B>Button [Quit]</B><BR>
+Click on this button to return to the Main Window.<BR>
+<BR>
+<BR>
+
+</BODY>
+</HTML>
+
