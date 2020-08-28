@@ -6,6 +6,8 @@
 
   app-header {
     height: 10vh;
+    display: flex;
+    flex-direction: row;
   }
 
   .content-wrapper {

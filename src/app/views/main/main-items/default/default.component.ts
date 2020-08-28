@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Customer } from '../../../../shared/models/interfaces/api/customer.model';
 import { CustomersService } from '../../../../shared/services/api/customers.service';
 import { DefaultService } from '../../../../shared/services/api/default.service';
+import { HelpService } from '../../../../shared/services/help.service';
 
 @Component({
   selector: 'app-default',
@@ -24,6 +25,7 @@ export class DefaultComponent implements OnInit {
   constructor(
     private customersService: CustomersService,
     private defaultService: DefaultService,
+    private helpService: HelpService,
   ) {
     this.tableKeys = [
       'sacrname',
@@ -57,6 +59,8 @@ export class DefaultComponent implements OnInit {
         this.sortedCustomers = [...this.customers];
       },
     });
+
+    this.helpService.setHelp(`Bonjour,\n\nVous êtes bien sur la page "Default" de l'application.\nVoici votre aide contextuelle.\n\n${Date.now()}`);
   }
 
   onFileUpload(event: Event): void {
